@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1861717283521314349}
   - component: {fileID: 1861717283521314348}
   m_Layer: 0
-  m_Name: Pregunta 11
+  m_Name: Pregunta 51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a4b9ea032c21b4e90600f897fe3220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\xBFComo se dice Corrientes en guarani?"
+  text: "\xBFComo se llama el Surubi de Susti?"
   options:
-  - text: M'boka
-    correct: 0
-  - text: Taragui
+  - text: Raul
     correct: 1
-  - text: "Mandiy\xFA"
+  - text: Rauw
     correct: 0
-  - text: Toropy
+  - text: Suru
+    correct: 0
+  - text: Gerard
     correct: 0

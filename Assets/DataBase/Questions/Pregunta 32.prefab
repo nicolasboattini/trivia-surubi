@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1861717283521314349}
   - component: {fileID: 1861717283521314348}
   m_Layer: 0
-  m_Name: Pregunta 11
+  m_Name: Pregunta 32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a4b9ea032c21b4e90600f897fe3220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "\xBFComo se dice Corrientes en guarani?"
+  text: "\xBFComo se llama el reptil mas grande de corrientes?"
   options:
-  - text: M'boka
+  - text: "Yarar\xE1"
     correct: 0
-  - text: Taragui
+  - text: "Pit\xF3n"
+    correct: 0
+  - text: Boa
+    correct: 0
+  - text: "Yacar\xE9"
     correct: 1
-  - text: "Mandiy\xFA"
-    correct: 0
-  - text: Toropy
-    correct: 0

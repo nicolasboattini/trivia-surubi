@@ -48,7 +48,7 @@ MonoBehaviour:
   options:
   - text: Santa Rosa
     correct: 0
-  - text: Mercedez
+  - text: Mercedes
     correct: 0
   - text: Virasoro
     correct: 1

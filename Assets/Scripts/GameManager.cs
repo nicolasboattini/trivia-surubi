@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 [RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
@@ -12,37 +12,42 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Color m_correctColor = Color.black;
     [SerializeField] private Color m_incorrectColor = Color.black;
     [SerializeField] private float m_waitTime = 0.0f;
-    private int puntuacion;
+    private int m_score;
+    //private int puntuacion;
     public Text textoContador;
 
-    private QuizDB m_quizDB = null;
-    private QuizUI m_quizUI = null;
-    public AudioSource m_audioSource = null;
+    // Referencia al TriviaManager
+    [SerializeField] private TriviaManager m_triviaManager = null;
+
+    
+    public AudioSource m_audioSource;
 
     public GameObject blockOption;
 
     public GameObject timerBar;
-    Animator anim;
+    private Animator m_anim;
 
     public float totalTime = 0.0f; // Total time for the quiz
     private float timeLeft; // Time left for the quiz
     private bool timerStarted; // Flag to check if the timer has started
-
-    public void Start()
+    void Start()
     {
-        m_quizDB = GameObject.FindObjectOfType<QuizDB>();
-        m_quizUI = GameObject.FindObjectOfType<QuizUI>();
-        m_audioSource = GetComponent<AudioSource>();
+        m_triviaManager = FindObjectOfType<TriviaManager>();
+        //m_audioSource = GetComponent<AudioSource>();
 
-        puntuacion = 0;
-
+        m_score = 0;
         timeLeft = totalTime;
         timerStarted = false;
 
-        anim = timerBar.GetComponent<Animator>();
+        m_anim = timerBar.GetComponent<Animator>();
 
+        StartTrivia(); // Inicia la secuencia de preguntas
+    }
+    public void StartTrivia()
+    {
         StartTimer();
-        NextQuestion();
+        m_triviaManager.StartTrivia(); // Inicia la secuencia de preguntas
+        
     }
 
     void Update()
@@ -75,58 +80,65 @@ public class GameManager : MonoBehaviour
 
         GameOver();
     }
-
-    public void NextQuestion()
+    public IEnumerator GiveAnswerRoutine(Button optionButton, bool answer)
     {
-        m_quizUI.Construct(m_quizDB.GetRandom(), GiveAnswer);
-    }
+        Debug.Log("Entre a al handler de respuestas");
 
-    public void GiveAnswer(OptionButton optionButton)
-    {
-        StartCoroutine(GiveAnswerRoutine(optionButton));
-    }
-
-    public IEnumerator GiveAnswerRoutine(OptionButton optionButton)
-    {
-        if(m_audioSource.isPlaying)
+        Debug.Log(optionButton.ToString());
+        if (m_audioSource.isPlaying)
+        {
             m_audioSource.Stop();
-
-        m_audioSource.clip = optionButton.Option.correct ? m_correctSound : m_incorrectSound;
-        optionButton.SetColor(optionButton.Option.correct ? m_correctColor : m_incorrectColor);
-
+            Debug.Log("DeteniendoAudio");
+        }
+        Debug.Log("Cambiando audio");
+        Debug.Log(answer);
+        m_audioSource.clip = answer ? m_correctSound : m_incorrectSound;
+        Debug.Log("Cambiando color");
+        optionButton.GetComponent<Image>().color = answer ? m_correctColor : m_incorrectColor;       
+        Debug.Log("Bloqueando interacción");
         blockOption.SetActive(true);
 
         m_audioSource.Play();
 
-        if(optionButton.Option.correct) {
-            puntuacion = puntuacion + 1;
-            textoContador.text = puntuacion.ToString();
+        if (answer)
+        {
+            Debug.Log("Logica para rta Correcta");
+            m_score++;
+            textoContador.text = m_score.ToString();
 
-            anim.enabled = false;
-
+            m_anim.enabled = false;
             timeLeft = 17.5f;
 
-            yield return new WaitForSeconds(m_waitTime);
-
-            NextQuestion();
-            blockOption.SetActive(false);
-            anim.Rebind();
-            anim.Update(0f);
-            anim.enabled = true;
+            yield return StartCoroutine(WaitAndNextQuestion());
         }
         else
         {
-            anim.enabled = false;
+            Debug.Log("Logica para rta inCorrecta");
+            m_anim.enabled = false;
 
-            yield return new WaitForSeconds(m_waitTime);
-
-            GameOver();
-            blockOption.SetActive(false);
+            yield return StartCoroutine(WaitAndGameOver());
         }
     }
-
+    // Corutina para esperar y luego mostrar la siguiente pregunta
+    private IEnumerator WaitAndNextQuestion()
+    {
+        yield return new WaitForSeconds(m_waitTime);
+        m_triviaManager.ShowNextQuestion();
+        blockOption.SetActive(false);
+        m_anim.Rebind();
+        m_anim.Update(0f);
+        m_anim.enabled = true;
+    }
+    // Corutina para esperar y luego mostrar el juego terminado
+    private IEnumerator WaitAndGameOver()
+    {
+        yield return new WaitForSeconds(m_waitTime);
+        m_triviaManager.GameOver();
+        blockOption.SetActive(false);
+    }
     public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");
     }
+
 }

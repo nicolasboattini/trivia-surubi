@@ -1,0 +1,10 @@
+¿Cuál es la capital de Francia?,Paris,Londres,Madrid,Berlín,0
+¿Cuál es el río más largo del mundo?,Amazonas,Nilo,Yangtse,Misisipi,0
+¿Cuál es el elemento más abundante en la corteza terrestre?,Oxígeno,Silicio,Hidrógeno,Aluminio,1
+¿Quién escribió "Don Quijote de la Mancha"?,Miguel de Cervantes,William Shakespeare,Franz Kafka,Homer Simpson,0
+¿En qué año se descubrió América?,1492,1776,1812,1532,0
+¿Cuál es la capital de España?,Madrid,París,Berlín,Roma,0
+¿Quién pintó la Mona Lisa?,Leonardo da Vinci,Vincent van Gogh,Pablo Picasso,Salvador Dalí,0
+¿Cuál es la montaña más alta del mundo?,Monte Everest,K2,Kangchenjunga,Lhotse,0
+¿Quién fue el primer presidente de Estados Unidos?,George Washington,Abraham Lincoln,Thomas Jefferson,John Adams,0
+¿Qué país es conocido como "La tierra del sol naciente"?,Japón,China,Corea del Sur,India,0

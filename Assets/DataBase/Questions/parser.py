@@ -1,6 +1,6 @@
 import os
 import re
-import yaml
+#import yaml
 import codecs
 
 def extract_data(monobehaviour_section):
@@ -24,10 +24,10 @@ def extract_data(monobehaviour_section):
     
     # Formatear la salida    
     options = [option.replace("'", "") for option in options]
-    formatted_options = ','.join(options).replace('\n', ' ')
+    formatted_options = ';'.join(options).replace('\n', ' ')
     # Eliminar las comillas simples de las opciones
     
-    return f'{question.strip()},{formatted_options.strip()},{correct_indices[0]}'
+    return f'{question.strip()};{formatted_options.strip()};{correct_indices[0]}'
 
 # Directorio donde se encuentra el script.py
 directory = os.path.dirname(os.path.abspath(__file__))

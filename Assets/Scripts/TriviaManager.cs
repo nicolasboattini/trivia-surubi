@@ -45,7 +45,7 @@ public class TriviaManager : MonoBehaviour
 
             foreach (string line in lines)
             {
-                string[] parts = line.Split(',');
+                string[] parts = line.Split(';');
                 if (parts.Length == 6)
                 {
                     Question question = new Question();

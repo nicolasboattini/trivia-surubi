@@ -9,7 +9,7 @@ GEOGRAFIA;¿Cuáles ríos rodean a la provincia de Corrientes?;Rio Bermejo y Rio
 HISTORIA;¿En qué año se inició el carnaval correntino?;1961;1981;1971;1991;0
 HISTORIA;¿En qué año fue fundada la ciudad de Corrientes?;1640;1580;1690;1588;3
 GEOGRAFIA;¿Cuántas puntas tiene la ciudad de Corrientes?;5;7;3;9;1
-CULTURA¿Qué fiesta se realiza en Bella Vista?;Fiesta Nacional de la Naranja;Fiesta Nacional de la Chacarera;Fiesta Nacional de la Frutilla;Fiesta Nacional de los Pescadores;0
+CULTURA;¿Qué fiesta se realiza en Bella Vista?;Fiesta Nacional de la Naranja;Fiesta Nacional de la Chacarera;Fiesta Nacional de la Frutilla;Fiesta Nacional de los Pescadores;0
 HISTORIA;¿En qué año fue la primera fiesta del Surubí?;1980;1969;2000;1997;1
 HISTORIA;¿Cuándo se inauguró el Puente Interprovincial Gral. Manuel Belgrano (Chaco-Ctes)?;1970;1973;1968;1982;1
 CULTURA;¿En qué municipio se realiza el Torneo Internacional de la Pesca del Dorado?;Empedrado;Ituzaingó;Esquina;Paso de la Patria;3
@@ -20,7 +20,7 @@ GEOGRAFIA;¿Cuántos parques industriales provinciales hay activos en la provinc
 GEOGRAFIA;¿Con cuantas provincias limita la provincia de Corrientes?;4;2;5;3;0
 GEOGRAFIA;¿Con cuáles de estos países limita la provincia de Corrientes?;Uruguay;Uruguay, Brasil y Paraguay ;Brasil;Brasil y Paraguay;1
 CULTURA;¿Quién es el actual gobernador de Corrientes?;Ricardo Colombi;Eduardo Tassano;Gustavo Valdes;Mariano Hormachea;2
-GEOGAFIA;¿Dónde se encuentra la represa Yacyreta en Corrientes?;Esquina;Santo Tome;Goya;Ituzaingó;3
+GEOGRAFIA;¿Dónde se encuentra la represa Yacyreta en Corrientes?;Esquina;Santo Tome;Goya;Ituzaingó;3
 CULTURA;¿Cuál es el emblema del Parque Nacional del Iberá?;Carancho;Capuchino Ibera;Inambú común;Yetapá de collar;3
 CULTURA;¿Cuántos correntinos somos (Censo 2022)?;1.197.553 habitantes;1.500.963 habitantes;1.000.050 habitantes;1.260.184 habitantes;0
 AMBIENTAL;¿Cuál es la mejor forma de evitar los incendios de acuerdo al spot publicitario del gobierno provincial?;Mantener los pastos de la vivienda cortos;Evitar el uso del fuego y la quema de pastizales;No tirar cigarrillos ni fósforos al piso;Regar las plantas y pastizales;1
@@ -55,7 +55,7 @@ GEOGRAFIA;¿Cuál es el clima Predominante en la Provincia de Corrientes?;Árido
 AMBIENTAL;¿Cuál es el roedor mas conocido de Corrientes?;Cuy;Rata;Carpincho;Conejo;2
 CULTURA;¿Qué cítricos produce en mayor cantidad la provincia de Corrientes?;Mandarinas;Naranjas;Limones;Pomelos;1
 CULTURA;¿Dónde se realiza el Festival Nacional del Autentico Chamamé Tradicional?;Mburucuyá;Mercedes;Esquina;Goya;0
-HAMBIENTAL;¿Qué localidades de Corrientes se encargan de producir cítricos?;Paso de los Libres y Yapeyú;Monte Caseros y Mocoretá;Mburucuyá y Concepción;Alvear y La Cruz;1
+AMBIENTAL;¿Qué localidades de Corrientes se encargan de producir cítricos?;Paso de los Libres y Yapeyú;Monte Caseros y Mocoretá;Mburucuyá y Concepción;Alvear y La Cruz;1
 CULTURA;¿Qué cereal se produce en mayor cantidad en Corrientes?;Arroz;Trigo;Centeno;Sordo;0
 GEOGRAFIA;¿Cuál es la segunda localidad mas grande de la provincia de Corrientes?;Santo Tomé;Ituzaingó;Mercedes;Goya;3
 CULTURA;¿Qué es el Karaí Octubre?;Es una tradición;Es un evento ;Un día festivo  ;Un Cumpleaños;0
@@ -67,7 +67,7 @@ CULTURA;El Karaí Octubre es un personaje mítico, ¿de qué cultura?;Cultura Gu
 CULTURA;El Karaí Octubre maldice tu casa si en ella NO hay...;Bebidas;Ganado;Miel;Comida/Abundancia;3
 CULTURA;¿Cuántos portales de acceso tiene el Parque Nacional Ibera?;2;5;4;9;2
 CULTURA;¿Qué comida preparaban tradicionalmente los guaraníes para satisfacer al Karaí Octubre?;Milanesa;Yopará;Asado;Sopa;1
-HISTORIA¿Qué día se celebra Karaí Octubre?;30 de Septiembre;10 de Octubre;1 de Octubre;30 de Octubre;2
+HISTORIA;¿Qué día se celebra Karaí Octubre?;30 de Septiembre;10 de Octubre;1 de Octubre;30 de Octubre;2
 CULTURA;¿Qué es lo que busca en las casas el karaí Octubre?;Abundancia de cultivos;Abundancia de bebidas;Abundancia de alimentos;Abundancia de ganado;2
 CULTURA;¿Cómo es físicamente el Karaí Octubre según la leyenda?;Pequeño, robusto y peludo;Alto, delgado y lampiño;Pequeño, delgado y peludo;Alto, robusto y lampiño;0
 CULTURA;¿Qué se come en el Karaí Octubre?;Yopará;Polenta mbaipy;Todas son correctas;Hortalizas;2

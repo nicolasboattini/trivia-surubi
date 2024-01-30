@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class TriviaManager : MonoBehaviour
 {
     public Text questionText;
+    public Text currentQuestion;
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
     private List<Question> questions = new List<Question>();
     private List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
@@ -81,6 +82,7 @@ public class TriviaManager : MonoBehaviour
             button.GetComponent<Image>().color = Color.white; // Restablecer a color blanco o el color original
         }
         currentQuestionIndex++;
+        currentQuestion.text = ("" + (currentQuestionIndex+1).ToString() + " / " + (questionIndexes.Count+1).ToString());
         if (AllQuestions())
         {
             Debug.Log("Todas las respuestas respondidas");
@@ -145,6 +147,7 @@ public class TriviaManager : MonoBehaviour
     }
     public bool AllQuestions()
     {
+
         return currentQuestionIndex >= questionIndexes.Count;
     }
 }

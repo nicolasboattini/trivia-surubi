@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             showWinnerScreen(true);
             StartCoroutine(WaitAndEnd(5f));
         }
-        if (PlayerPrefs.HasKey("ScoreLimit"))
+        if (PlayerPrefs.HasKey("ScoreLimit") && PlayerPrefs.GetInt("ScoreLimit") != 0)
         {
             int scoreLimit = PlayerPrefs.GetInt("ScoreLimit");
             if (m_score >= scoreLimit)

@@ -1,5 +1,7 @@
-using Newtonsoft.Json.Linq;
+    using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,9 +14,17 @@ public class MainMenu : MonoBehaviour
     private int scoreLimit = 0;
     public Text limitUI;
 
+    public GameObject togglePrefab;
+    public Transform toggleParent;
+
     private const string selectedCategoriesKey = "SelectedCategories";
 
     private void Start()
+    {
+        GenerateCategoryToggles();
+        toggleListeners();
+    }
+    public void toggleListeners()
     {
         for (int i = 0; i < categoryToggles.Length; i++)
         {
@@ -25,6 +35,41 @@ public class MainMenu : MonoBehaviour
             // Configura el color inicial
             UpdateToggleColor(categoryToggles[i], false);
         }
+    }
+    public void GenerateCategoryToggles()
+    {
+        List<Toggle> togglesList = new List<Toggle>(); // Usamos una lista temporal para agregar los toggles
+        HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categorías únicas
+
+        string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
+        if (File.Exists(filePath))
+        {
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split(';');
+                if (parts.Length >= 1)
+                {
+                    string category = parts[0];
+                    if (!uniqueCategories.Contains(category))
+                    {
+                        // Si la categoría no existe, creamos el toggle y lo agregamos a la lista temporal
+                        Toggle newToggle = CreateToggle(category);
+                        togglesList.Add(newToggle);
+                        uniqueCategories.Add(category); // Agregamos la categoría al HashSet para evitar duplicados
+                    }
+                }
+            }
+        }
+
+        categoryToggles = togglesList.ToArray();
+    }
+    public Toggle CreateToggle(string category)
+    {
+        GameObject toggleGO = Instantiate(togglePrefab, toggleParent);
+        Toggle toggle = toggleGO.GetComponent<Toggle>();
+        toggle.GetComponentInChildren<Text>().text = category;
+        return toggle;
     }
     public void PlayButton()
     {

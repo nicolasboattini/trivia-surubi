@@ -12,7 +12,6 @@ public class TriviaManager : MonoBehaviour
     private List<Question> questions = new List<Question>();
     private List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
     private int currentQuestionIndex = -1; // Índice de la pregunta actual
-
     [Serializable]
     public class Question
     {
@@ -21,39 +20,38 @@ public class TriviaManager : MonoBehaviour
         public int correctAnswerIndex;
     }
     [SerializeField] private GameManager m_gameManager = null; // Referencia al GameManager
-
     void Start()
     {
         m_gameManager = FindObjectOfType<GameManager>();
-        LoadQuestionsFromFile("questions.txt");
-        ShuffleQuestions();
-        //StartTrivia();
+        
     }
-    public void StartTrivia()
+    public void StartTrivia(List<string> selectedCategories)
     {
+        LoadQuestionsFromFile("questions.txt", selectedCategories);
+        ShuffleQuestions();
         ShowNextQuestion();
     }
-
-
-    void LoadQuestionsFromFile(string fileName)
+    void LoadQuestionsFromFile(string fileName, List<string> selectedCategories)
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
-
         if (File.Exists(filePath))
         {
             string[] lines = File.ReadAllLines(filePath);
-
             foreach (string line in lines)
             {
                 string[] parts = line.Split(';');
-                if (parts.Length == 6)
+                if (parts.Length == 7)
                 {
-                    Question question = new Question();
-                    question.question = parts[0];
-                    question.answers = new string[4];
-                    Array.Copy(parts, 1, question.answers, 0, 4);
-                    question.correctAnswerIndex = int.Parse(parts[5]);
-                    questions.Add(question);
+                    string category = parts[0];
+                    if (selectedCategories.Contains(category))
+                    {
+                        Question question = new Question();
+                        question.question = parts[1];
+                        question.answers = new string[4];
+                        Array.Copy(parts, 2, question.answers, 0, 4);
+                        question.correctAnswerIndex = int.Parse(parts[6]);
+                        questions.Add(question);
+                    }
                 }
                 else
                 {
@@ -76,7 +74,6 @@ public class TriviaManager : MonoBehaviour
         }
         questionIndexes.Shuffle();
     }
-
     public void ShowNextQuestion()
     {
         foreach (Button button in answerButtons)
@@ -84,13 +81,20 @@ public class TriviaManager : MonoBehaviour
             button.GetComponent<Image>().color = Color.white; // Restablecer a color blanco o el color original
         }
         currentQuestionIndex++;
+        if (AllQuestions())
+        {
+            Debug.Log("Todas las respuestas respondidas");
+            m_gameManager.showWinnerScreen(true);
+            StartCoroutine(m_gameManager.WaitAndEnd(5f));
+            return;
+        }
+
         if (currentQuestionIndex >= questionIndexes.Count)
         {
             Debug.Log("End of questions. Restarting...");
             ShuffleQuestions();
             currentQuestionIndex = 0;
         }
-
         if(questionIndexes.Count > 0)
         {
             int questionIndex = questionIndexes[currentQuestionIndex];
@@ -113,9 +117,7 @@ public class TriviaManager : MonoBehaviour
         {
             Debug.LogError("No questions available");
         }
-        
     }
-
     void OnAnswerSelected(Button selectedButton, int answerIndex, int correctAnswerIndex)
     {
         Debug.Log(selectedButton);
@@ -124,33 +126,26 @@ public class TriviaManager : MonoBehaviour
         {
             if (answerButtons[i] == selectedButton)
             {
-                Debug.Log("Boton coincide " + answerButtons[i] + " vs " + selectedButton);
                 selectedAnswerIndex = i;
                 break;
             }
-            Debug.Log("Boton no coincide " + answerButtons[i] + " vs " + selectedButton);
-            
         }
         if (answerIndex == correctAnswerIndex)
         {
-            Debug.Log("Respuesta Correcta");
-            Debug.Log(" Esperada " + correctAnswerIndex + " Recibida: " + selectedAnswerIndex + " O :" + answerIndex);
-            Debug.Log(answerButtons[selectedAnswerIndex].GetComponent<Button>());
-
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton, true));
         }
         else
         {
-            Debug.Log("Respuesta inCorrecta");
-            Debug.Log(" Esperada " + correctAnswerIndex + " Recibida: " + selectedAnswerIndex + " O :" + answerIndex);
-            Debug.Log(answerButtons[selectedAnswerIndex].GetComponent<Button>());
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton.GetComponent<Button>(), false));
         }
     }
-
     public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public bool AllQuestions()
+    {
+        return currentQuestionIndex >= questionIndexes.Count;
     }
 }
 // Método de extensión para mezclar una lista genérica

@@ -1,4 +1,4 @@
-# trivia-surubi
+# CorrientesCurioso
 This is a fork from CorrientesCurioso created by @Matte4k aimed to improve the game since it'll be no longer maintained by its creator.
 I've changed the game logic to use a plain .txt file to load the questions and answers.
 The file is located in Data/StreamingAssets/questions.txt.

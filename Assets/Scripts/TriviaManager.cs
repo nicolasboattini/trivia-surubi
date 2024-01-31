@@ -9,6 +9,7 @@ public class TriviaManager : MonoBehaviour
 {
     public Text questionText;
     public Text currentQuestion;
+    public Text currentCat;
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
     private List<Question> questions = new List<Question>();
     private List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
@@ -19,6 +20,7 @@ public class TriviaManager : MonoBehaviour
         public string question;
         public string[] answers;
         public int correctAnswerIndex;
+        public string catName;
     }
     [SerializeField] private GameManager m_gameManager = null; // Referencia al GameManager
     void Start()
@@ -51,6 +53,7 @@ public class TriviaManager : MonoBehaviour
                         question.answers = new string[4];
                         Array.Copy(parts, 2, question.answers, 0, 4);
                         question.correctAnswerIndex = int.Parse(parts[6]);
+                        question.catName = category;
                         questions.Add(question);
                     }
                 }
@@ -81,8 +84,6 @@ public class TriviaManager : MonoBehaviour
         {
             button.GetComponent<Image>().color = Color.white; // Restablecer a color blanco o el color original
         }
-        currentQuestionIndex++;
-        currentQuestion.text = ("" + (currentQuestionIndex+1).ToString() + " / " + (questionIndexes.Count+1).ToString());
         if (AllQuestions())
         {
             Debug.Log("Todas las respuestas respondidas");
@@ -90,35 +91,34 @@ public class TriviaManager : MonoBehaviour
             StartCoroutine(m_gameManager.WaitAndEnd(5f));
             return;
         }
-
-        if (currentQuestionIndex >= questionIndexes.Count)
-        {
-            Debug.Log("End of questions. Restarting...");
-            ShuffleQuestions();
-            currentQuestionIndex = 0;
-        }
-        if(questionIndexes.Count > 0)
-        {
-            int questionIndex = questionIndexes[currentQuestionIndex];
-            Question currentQuestion = questions[questionIndex];
-            questionText.text = currentQuestion.question;            
-            // Mezclar el orden de las respuestas
-            List<int> answerIndexes = new List<int>() { 0, 1, 2, 3 };
-            answerIndexes.Shuffle();
-            Debug.Log("AnswerButton lenght: " + answerButtons.Length);
-            for (int i = 0; i < answerButtons.Length; i++)
-            {
-                int answerIndex = answerIndexes[i];
-                answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[answerIndex];
-                answerButtons[i].onClick.RemoveAllListeners();
-                int buttonIndex = i;
-                answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestion.correctAnswerIndex) );
-            }
-        }
         else
         {
-            Debug.LogError("No questions available");
+            if (!m_gameManager.checkScore()) currentQuestion.text = ("Pregunta " + (currentQuestionIndex + 1).ToString() + " / " + questionIndexes.Count.ToString());
+            if (questionIndexes.Count > 0)
+            {
+                int questionIndex = questionIndexes[currentQuestionIndex];
+                Question currentQuestion = questions[questionIndex];
+                questionText.text = currentQuestion.question;
+                currentCat.text = currentQuestion.catName;
+                // Mezclar el orden de las respuestas
+                List<int> answerIndexes = new List<int>() { 0, 1, 2, 3 };
+                answerIndexes.Shuffle();
+                Debug.Log("AnswerButton lenght: " + answerButtons.Length);
+                for (int i = 0; i < answerButtons.Length; i++)
+                {
+                    int answerIndex = answerIndexes[i];
+                    answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[answerIndex];
+                    answerButtons[i].onClick.RemoveAllListeners();
+                    int buttonIndex = i;
+                    answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestion.correctAnswerIndex));
+                }
+            }
+            else
+            {
+                Debug.LogError("No questions available");
+            }
         }
+        
     }
     void OnAnswerSelected(Button selectedButton, int answerIndex, int correctAnswerIndex)
     {
@@ -147,7 +147,7 @@ public class TriviaManager : MonoBehaviour
     }
     public bool AllQuestions()
     {
-
+        currentQuestionIndex++;
         return currentQuestionIndex >= questionIndexes.Count;
     }
 }

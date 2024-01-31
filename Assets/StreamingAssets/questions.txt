@@ -27,7 +27,7 @@ AMBIENTAL;¿Cuál es la mejor forma de evitar los incendios de acuerdo al spot p
 AMBIENTAL;¿Como se llama el reptil mas grande de corrientes?;Yarará;Pitón;Boa;Yacaré;3
 AMBIENTAL;¿Cuánto tardan en degradarse las latas de aluminio?;10 meses;1 año ;10 años ;5 años;2
 AMBIENTAL;¿Cómo se llama la aplicación que lanzó el gobierno provincial para detectar focos de incendio?;Alto al fuego;Corrientes sin fuego;Alerta Incendios;Alertas Corrientes;3
-CULTURA;;¿Cómo se llama la empresa de telecomunicaciones de Corrientes?;Telco;Telecom;Telecentro;Netco;0
+CULTURA;¿Cómo se llama la empresa de telecomunicaciones de Corrientes?;Telco;Telecom;Telecentro;Netco;0
 AMBIENTAL;¿De qué color es el contenedor para reciclar el papel y cartón?;Verde;Azul;Marrón;Amarillo;1
 AMBIENTAL;¿De qué color es el contenedor para reciclar el Aluminio?;Rojo;Gris;Naranja;Azul;1
 AMBIENTAL;¿De qué color es el contenedor para reciclar el Plástico?;Verde;Gris;Naranja;Amarillo;3

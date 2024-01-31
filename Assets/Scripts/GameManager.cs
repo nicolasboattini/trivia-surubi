@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TriviaManager m_triviaManager = null;
     // Añadir una variable para almacenar las categorías seleccionadas
     private List<string> selectedCategories = new List<string>();
-    private int m_score;
+    public int m_score;
+    public int? scoreLimit;
     public Text textoContador;
     public AudioSource m_audioSource;
     public GameObject blockOption;
@@ -59,22 +60,26 @@ public class GameManager : MonoBehaviour
                 EndTimer(); // End timer when time is up
             }
         }
-        if (m_triviaManager.AllQuestions())
-        {
-            Debug.Log("Todas las respuestas respondidas");
-            showWinnerScreen(true);
-            StartCoroutine(WaitAndEnd(5f));
-        }
         if (PlayerPrefs.HasKey("ScoreLimit") && PlayerPrefs.GetInt("ScoreLimit") != 0)
         {
-            int scoreLimit = PlayerPrefs.GetInt("ScoreLimit");
-            if (m_score >= scoreLimit)
+            if (scoreLimit == null)
+            {
+                scoreLimit = PlayerPrefs.GetInt("ScoreLimit");
+                Debug.Log("Se asigno un limite");
+            }
+            
+            if (checkScore())
             {
                 timerStarted = false;
                 showWinnerScreen(false);
                 StartCoroutine(WaitAndEnd(5f));
             }
-        }        
+        }
+
+    }
+    public bool checkScore()
+    {
+        return m_score >= scoreLimit;
     }
     public IEnumerator WaitAndEnd(float waitTime)
     {
@@ -130,7 +135,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndNextQuestion()
     {
         yield return new WaitForSeconds(m_waitTime);
-        m_triviaManager.ShowNextQuestion();
+        if (!winnerScreen.activeSelf) m_triviaManager.ShowNextQuestion();
         blockOption.SetActive(false);
         m_anim.Rebind();
         m_anim.Update(0f);

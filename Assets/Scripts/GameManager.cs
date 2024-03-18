@@ -131,6 +131,10 @@ public class GameManager : MonoBehaviour
             yield return StartCoroutine(WaitAndGameOver());
         }
     }
+    public void ShowCorrectOnFail(Button optionButton)
+    {
+        optionButton.GetComponent<Image>().color = m_correctColor;
+    }
     // Corutina para esperar y luego mostrar la siguiente pregunta
     private IEnumerator WaitAndNextQuestion()
     {

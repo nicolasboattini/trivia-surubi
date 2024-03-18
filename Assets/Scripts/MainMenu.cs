@@ -13,16 +13,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject configPanel;
     private int scoreLimit = 0;
     public Text limitUI;
-
+    public bool evento = false;
     public GameObject togglePrefab;
     public Transform toggleParent;
+    public Toggle eventoMode;
 
     private const string selectedCategoriesKey = "SelectedCategories";
 
     private void Start()
     {
         GenerateCategoryToggles();
-        toggleListeners();
+        toggleListeners();     
+        
     }
     public void toggleListeners()
     {
@@ -132,16 +134,16 @@ public class MainMenu : MonoBehaviour
         toggle.colors = cb;
     }
     public void SwapConfig()
-    {
+    {        
         configPanel.SetActive(!configPanel.activeSelf);
         UpdateScoreLimitText();
+        UpdateState();
     }
     public void IncrementScoreLimit()
     {
         scoreLimit++;
         SaveScoreLimit();
         UpdateScoreLimitText();
-        
     }
     public void DecrementScoreLimit()
     {
@@ -153,15 +155,29 @@ public class MainMenu : MonoBehaviour
         UpdateScoreLimitText();
         
     }
-    public void Update()
+    public void SwapEvent()
     {
-        //UpdateScoreLimitText();
+        evento = !evento;
+        SaveEventState();        
+    }    
+    private void UpdateState()
+    {
+        if (PlayerPrefs.HasKey("ModoEvento"))
+        {
+            int pref = PlayerPrefs.GetInt("ModoEvento");
+            evento = pref == 1 ? true : false;
+            Debug.Log("EventoMode de pref " + pref);
+            eventoMode.isOn = evento;
+        }
+        else
+        {
+            eventoMode.isOn = evento;
+        }
     }
     private void UpdateScoreLimitText()
     {
         if (PlayerPrefs.HasKey("ScoreLimit"))
         {
-            
             int pref = PlayerPrefs.GetInt("ScoreLimit");
             Debug.Log("ScoreLimite de pref " + pref);
             scoreLimit = pref;
@@ -177,5 +193,11 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("ScoreLimit", scoreLimit);
         PlayerPrefs.Save();
+    }
+    private void SaveEventState()
+    {
+        int state = evento ? 1 : 0;
+        PlayerPrefs.SetInt("ModoEvento", state);
+        PlayerPrefs.Save(); 
     }
 }

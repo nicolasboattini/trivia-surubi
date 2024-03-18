@@ -138,6 +138,14 @@ public class TriviaManager : MonoBehaviour
         }
         else
         {
+            
+            
+                if (PlayerPrefs.GetInt("ModoEvento") is 0 )
+                {
+                    m_gameManager.ShowCorrectOnFail(answerButtons[correctAnswerIndex]);
+                }
+            
+            
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton.GetComponent<Button>(), false));
         }
     }

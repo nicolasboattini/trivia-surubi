@@ -171,6 +171,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
+            Debug.Log("EventoMode de UI " + evento);
             eventoMode.isOn = evento;
         }
     }

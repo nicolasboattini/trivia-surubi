@@ -11,9 +11,9 @@ public class TriviaManager : MonoBehaviour
     public Text currentQuestion;
     public Text currentCat;
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
-    private List<Question> questions = new List<Question>();
-    private List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
-    private int currentQuestionIndex = -1; // Índice de la pregunta actual
+    public List<Question> questions = new List<Question>();
+    public List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
+    public int currentQuestionIndex = -1; // Índice de la pregunta actual
     [Serializable]
     public class Question
     {
@@ -110,7 +110,7 @@ public class TriviaManager : MonoBehaviour
                     answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[answerIndex];
                     answerButtons[i].onClick.RemoveAllListeners();
                     int buttonIndex = i;
-                    answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestion.correctAnswerIndex));
+                    answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestion));
                 }
             }
             else
@@ -120,7 +120,7 @@ public class TriviaManager : MonoBehaviour
         }
         
     }
-    void OnAnswerSelected(Button selectedButton, int answerIndex, int correctAnswerIndex)
+    void OnAnswerSelected(Button selectedButton, int answerIndex, Question qst)
     {
         Debug.Log(selectedButton);
         int selectedAnswerIndex = 0;
@@ -132,20 +132,22 @@ public class TriviaManager : MonoBehaviour
                 break;
             }
         }
-        if (answerIndex == correctAnswerIndex)
+        if (answerIndex == qst.correctAnswerIndex)
         {
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton, true));
         }
         else
         {
-            
-            
-                if (PlayerPrefs.GetInt("ModoEvento") is 0 )
+            if (PlayerPrefs.GetInt("ModoEvento") is 0 )
+            {
+                foreach (Button btn in answerButtons)
                 {
-                    m_gameManager.ShowCorrectOnFail(answerButtons[correctAnswerIndex]);
+                    if (btn.GetComponentInChildren<Text>().text == qst.answers[qst.correctAnswerIndex])
+                    {
+                        m_gameManager.ShowCorrectOnFail(btn);
+                    }
                 }
-            
-            
+            }
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton.GetComponent<Button>(), false));
         }
     }

@@ -23,7 +23,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         GenerateCategoryToggles();
-        toggleListeners();     
+        toggleListeners();
+        toggleParent.transform.position = new Vector3(0, 0, 0);
         
     }
     public void toggleListeners()
@@ -65,6 +66,7 @@ public class MainMenu : MonoBehaviour
         }
 
         categoryToggles = togglesList.ToArray();
+        //toggleParent.transform.position = Vector3.zero;
     }
     public Toggle CreateToggle(string category)
     {

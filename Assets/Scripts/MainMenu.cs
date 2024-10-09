@@ -1,10 +1,13 @@
-    using Newtonsoft.Json.Linq;
+Ôªøusing Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -22,10 +25,15 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        GenerateCategoryToggles();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Entrando por webgl");
+        StartCoroutine(GenerateCategoryTogglesWebGL());
+#else 
+        Debug.Log("Entrando por Desktop");
+        GenerateCategoryTogglesDesktop();
         toggleListeners();
-        toggleParent.transform.position = new Vector3(0, 0, 0);
-        
+        //toggleParent.transform.position = new Vector3(0, 0, 0);
+#endif
     }
     public void toggleListeners()
     {
@@ -39,10 +47,10 @@ public class MainMenu : MonoBehaviour
             UpdateToggleColor(categoryToggles[i], false);
         }
     }
-    public void GenerateCategoryToggles()
+    public void GenerateCategoryTogglesDesktop()
     {
         List<Toggle> togglesList = new List<Toggle>(); // Usamos una lista temporal para agregar los toggles
-        HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categorÌas ˙nicas
+        HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categor√≠as √∫nicas
 
         string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
         if (File.Exists(filePath))
@@ -56,10 +64,10 @@ public class MainMenu : MonoBehaviour
                     string category = parts[0];
                     if (!uniqueCategories.Contains(category))
                     {
-                        // Si la categorÌa no existe, creamos el toggle y lo agregamos a la lista temporal
+                        // Si la categor√≠a no existe, creamos el toggle y lo agregamos a la lista temporal
                         Toggle newToggle = CreateToggle(category);
                         togglesList.Add(newToggle);
-                        uniqueCategories.Add(category); // Agregamos la categorÌa al HashSet para evitar duplicados
+                        uniqueCategories.Add(category); // Agregamos la categor√≠a al HashSet para evitar duplicados
                     }
                 }
             }
@@ -67,6 +75,46 @@ public class MainMenu : MonoBehaviour
 
         categoryToggles = togglesList.ToArray();
         //toggleParent.transform.position = Vector3.zero;
+    }
+    public IEnumerator GenerateCategoryTogglesWebGL()
+    {
+        List<Toggle> togglesList = new List<Toggle>(); // Usamos una lista temporal para agregar los toggles
+        HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categor√≠as √∫nicas
+
+        string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
+        UnityWebRequest request = UnityWebRequest.Get(filePath);
+
+        // Enviar la solicitud y esperar la respuesta
+        yield return request.SendWebRequest();
+
+        // Verificar errores de conexiÔøΩn
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error al cargar el archivo: " + request.error);
+            yield break;
+        }
+
+        // Leer el contenido del archivo
+        Debug.Log($"Request {request} {request.downloadHandler.text}");
+        string[] lines = request.downloadHandler.text.Split('\n');
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(';');
+            if (parts.Length >= 1)
+            {
+                string category = parts[0];
+                if (!uniqueCategories.Contains(category))
+                {
+                    // Si la categor√≠a no existe, creamos el toggle y lo agregamos a la lista temporal
+                    Toggle newToggle = CreateToggle(category);
+                    togglesList.Add(newToggle);
+                    uniqueCategories.Add(category); // Agregamos la categor√≠a al HashSet para evitar duplicados
+                }
+            }
+        }
+        categoryToggles = togglesList.ToArray();
+        //toggleParent.transform.position = Vector3.zero;
+        toggleListeners();
     }
     public Toggle CreateToggle(string category)
     {
@@ -81,10 +129,10 @@ public class MainMenu : MonoBehaviour
 
         if (selectedCategories.Count == 0)
         {
-            Debug.Log("Por favor, selecciona al menos una categorÌa.");
+            Debug.Log("Por favor, selecciona al menos una categor√≠a.");
             return;
         }
-        // Guardar las categorÌas seleccionadas en PlayerPrefs
+        // Guardar las categor√≠as seleccionadas en PlayerPrefs
         PlayerPrefs.SetString(selectedCategoriesKey, string.Join(",", selectedCategories));
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString(selectedCategoriesKey));
@@ -121,14 +169,14 @@ public class MainMenu : MonoBehaviour
         ColorBlock cb = toggle.colors;
         if (val)
         {
-            // Configura el color cuando est· seleccionado
+            // Configura el color cuando est√° seleccionado
             cb.normalColor = new Color(121 / 255f, 255 / 255f, 148 / 255f);
             cb.selectedColor = new Color(121 / 255f, 255 / 255f, 148 / 255f);
             cb.highlightedColor = new Color(121 / 255f, 255 / 255f, 148 / 255f);
         }
         else
         {
-            // Configura el color cuando no est· seleccionado
+            // Configura el color cuando no est√° seleccionado
             cb.normalColor = Color.white;
             cb.selectedColor = Color.white;
             cb.highlightedColor= Color.white;

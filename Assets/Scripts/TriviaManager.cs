@@ -1,9 +1,11 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class TriviaManager : MonoBehaviour
 {
@@ -12,8 +14,8 @@ public class TriviaManager : MonoBehaviour
     public Text currentCat;
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
     public List<Question> questions = new List<Question>();
-    public List<int> questionIndexes = new List<int>(); // Õndices de las preguntas que se han mostrado
-    public int currentQuestionIndex = -1; // Õndice de la pregunta actual
+    public List<int> questionIndexes = new List<int>(); // √çndices de las preguntas que se han mostrado
+    public int currentQuestionIndex = -1; // √çndice de la pregunta actual
     [Serializable]
     public class Question
     {
@@ -30,11 +32,17 @@ public class TriviaManager : MonoBehaviour
     }
     public void StartTrivia(List<string> selectedCategories)
     {
-        LoadQuestionsFromFile("questions.txt", selectedCategories);
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Entrando por webgl");
+        StartCoroutine(LoadQuestionsFromFileWebGL("questions.txt", selectedCategories));
+#else
+        Debug.Log("Entrando por Desktop");
+        LoadQuestionsFromFileDesktop("questions.txt", selectedCategories);
         ShuffleQuestions();
         ShowNextQuestion();
+#endif
     }
-    void LoadQuestionsFromFile(string fileName, List<string> selectedCategories)
+    public void LoadQuestionsFromFileDesktop(string fileName, List<string> selectedCategories)
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
         if (File.Exists(filePath))
@@ -57,10 +65,6 @@ public class TriviaManager : MonoBehaviour
                         questions.Add(question);
                     }
                 }
-                else
-                {
-                    Debug.LogWarning("Invalid question format: " + line);
-                }
             }
         }
         else
@@ -68,15 +72,66 @@ public class TriviaManager : MonoBehaviour
             Debug.LogError("Questions file not found: " + filePath);
         }
     }
+
+    public IEnumerator LoadQuestionsFromFileWebGL(string fileName, List<string> selectedCategories)
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        UnityWebRequest request = UnityWebRequest.Get(filePath);
+
+        // Enviar la solicitud y esperar la respuesta
+        yield return request.SendWebRequest();
+
+        // Verificar errores de conexiÔøΩn
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error al cargar el archivo: " + request.error);
+            yield break;
+        }
+
+        // Leer el contenido del archivo
+        Debug.Log($"Request {request} {request.downloadHandler.text}");
+        string[] lines = request.downloadHandler.text.Split('\n');
+
+        // Procesar cada lÔøΩnea del archivo
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(';');
+            if (parts.Length == 7)
+            {
+                string category = parts[0];
+                if (selectedCategories.Contains(category))
+                {
+                    Question question = new Question();
+                    question.question = parts[1];
+                    question.answers = new string[4];
+                    Array.Copy(parts, 2, question.answers, 0, 4);
+                    question.correctAnswerIndex = int.Parse(parts[6]);
+                    question.catName = category;
+                    questions.Add(question);
+                    Debug.Log($"Pregunta cargada con exito {question.question}");
+                }
+            }
+
+        }
+        Debug.Log("Entrando por webgl shuffle");
+        ShuffleQuestions();
+    }
     void ShuffleQuestions()
     {
-        // Genera una lista de Ìndices de preguntas mezclada
+        // Genera una lista de √≠ndices de preguntas mezclada
         questionIndexes.Clear();
+        Debug.Log($"Questions count {questions.Count} ");
         for (int i = 0; i < questions.Count; i++)
         {
             questionIndexes.Add(i);
         }
         questionIndexes.Shuffle();
+        Debug.Log($"Question indexes {questionIndexes.Count} ");
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Entrando por webgl nextQuestion");
+        ShowNextQuestion();
+#endif
+
     }
     public void ShowNextQuestion()
     {
@@ -161,7 +216,7 @@ public class TriviaManager : MonoBehaviour
         return currentQuestionIndex >= questionIndexes.Count;
     }
 }
-// MÈtodo de extensiÛn para mezclar una lista genÈrica
+// M√©todo de extensi√≥n para mezclar una lista gen√©rica
 public static class ListExtensions
 {
     private static System.Random rng = new System.Random();

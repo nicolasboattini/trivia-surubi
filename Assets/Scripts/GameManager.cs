@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
     public GameObject blockOption;
     public GameObject timerBar;
     public GameObject winnerScreen;
+    public GameObject rankingScreen;
     private Animator m_anim;
     public float totalTime = 0.0f; // Total time for the quiz
     private float timeLeft; // Time left for the quiz
     private bool timerStarted; // Flag to check if the timer has started
+    public RankingUIManager rankingUI;
     void Start()
     {
         SetSelectedCategories();
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
         timerStarted = false;
         m_anim = timerBar.GetComponent<Animator>();
         StartTrivia(); // Inicia la secuencia de preguntas
+        //rankingUI.OnLevelWasLoaded(1);
     }
     public void SetSelectedCategories()
     {
@@ -93,21 +96,13 @@ public class GameManager : MonoBehaviour
     public void EndTimer()   // Do something when the timer ends, such as show the quiz results
     {
         timerStarted = false;
-        if (m_audioSource.isPlaying) m_audioSource.Stop();
-        m_audioSource.clip = m_incorrectSound;
-        m_audioSource.Play();
-        GameOver();
+        StartCoroutine(WaitAndShowKeyboard());
     }
     public void showWinnerScreen(bool val)
     {
         if (val)
         {
             winnerScreen.SetActive(true);
-            winnerScreen.GetComponentInChildren<Text>().text = "¡Felicidades, Respondiste Todas las Preguntas!";
-        }else
-        {
-            winnerScreen.SetActive(true);
-            winnerScreen.GetComponentInChildren<Text>().text = "¡Felicidades, Ganaste!";
         }
     }
     public IEnumerator GiveAnswerRoutine(Button optionButton, bool answer)
@@ -128,7 +123,7 @@ public class GameManager : MonoBehaviour
         else
         {
             m_anim.enabled = false;
-            yield return StartCoroutine(WaitAndGameOver());
+            yield return StartCoroutine(WaitAndShowKeyboard());
         }
     }
     public void ShowCorrectOnFail(Button optionButton)
@@ -152,6 +147,18 @@ public class GameManager : MonoBehaviour
         m_triviaManager.GameOver();
         blockOption.SetActive(false);
     }
+
+    private IEnumerator WaitAndShowKeyboard()
+    {
+        if (m_audioSource != null)
+        {
+            m_audioSource.PlayOneShot(m_incorrectSound);
+        }
+        yield return new WaitForSeconds(m_waitTime);
+        submitName();
+        blockOption.SetActive(false);
+    }
+
     public void GameOver()
     {
         PlayerPrefs.DeleteKey("SelectedCategories");
@@ -162,5 +169,16 @@ public class GameManager : MonoBehaviour
         // Limpia todas las claves de PlayerPrefs al salir de la aplicación
         Debug.Log("Limpiando prefs");
         PlayerPrefs.DeleteAll();
+    }
+    private void submitName()
+    {
+        showWinnerScreen(true);
+    }
+
+    public void showRanking()
+    {
+        rankingUI.UpdateLeaderboardUI();
+        showWinnerScreen(false);
+        rankingScreen.SetActive(true);
     }
 }

@@ -3,7 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - b
+  - v
+  - n
+  - x
+  - c
+  - m
+  - z
+  - s
+  - h
+  - d
+  - g
+  - l
+  - k
+  - a
+  - f
+  - j
+  - GameManager
+  - RankingText
   layers:
   - Default
   - TransparentFX

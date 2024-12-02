@@ -22,26 +22,27 @@ SOL Y PLAYA;La provincia de Corrientes cuenta con hermosas playas de arena para 
 SOL Y PLAYA;¿Cuál es la playa más popular de la Ciudad de Corrientes?;Playa Islas Malvinas;Playa Itatí;Playa Arazatí;Playa Arandu;2
 SOL Y PLAYA;¿Qué río baña las playas de Corrientes?;Río Paraná y Rio Uruguay;Río Uruguay y Rio Iguazu;Río Paraná y Rio Corriente;Rio Uruguay y Rio Corriente;0
 SOL Y PLAYA;¿Qué actividad es común en las playas de Corrientes?;Kayak y Pesca;Pesca y Navegación;KiteSurf y navegación;Windsurf y Pesca;0
-CHAMAMÉ;La música y la danza que identifica a Corrientes es:;La chacarera;El chamamé;La polca;Folklore;1
-CHAMAMÉ;En Corrientes se realiza uno de los festivales de música más importantes del país:;Festival Nacional del Folklore;Fiesta Nacional del Chamamé;Festival Nacional de la Música del Litoral;Festival Nacional de la Chacarera;1
-CHAMAMÉ;¿Cuál es el instrumento principal del chamamé?;Acordeón;Guitarra;Piano;Violín;0
-CHAMAMÉ;¿Quién es considerado el "Rey del Chamamé"?;Carlos Rivero;Juan Carlos Moreno;Raúl Barboza;Antonio Tarragó Ros;3
-CHAMAMÉ;¿Dónde se realiza la Fiesta Nacional del Chamamé?;Anfiteatro Mario del Tránsito Cocomarola;Anfiteatro Jose Hernandez;Anfiteatro Pinin Palma;Anfiteatro Jose Maria;0
-CHAMAMÉ;¿Qué reconocido autor escribió el tema "Estudiante del Interior"?;Terrago Ros;Mario Bofil;Teresa Paradi;Bocha Sheridan;1
-CHAMAMÉ;¿Dónde se desarrolla el Festival Nacional del Auténtico Chamamé Tradicional?;Itá Ibaté;Mburucuyá;Loreto;San Miguel;1
-HISTÓRICO-CULTURAL;En la provincia de Corrientes hay cuatro pueblos que forman parte de los 30 fundados por las Misiones Jesuíticas Guaraníes. Estos son:;San Carlos, Alvear, Santo Tomé, La Cruz y Yapeyú;Ituzaingó, Virasoro, Paso de los Libres y Monte Caseros;Mercedes, Curuzú Cuatiá, Bella Vista y Lavalle;Esquina, Goya, Santa Lucia, Bella vista;0
-HISTÓRICO-CULTURAL;El soldado Juan Bautista Cabral, perteneciente al Regimiento de Granaderos a Caballo, nació en:;Saladas, Corrientes;Santa Rosa, Corrientes;Yapeyú, Corrientes;San Miguel;0
-HISTÓRICO-CULTURAL;Una localidad correntina fue fundada el 16 de noviembre 1810 por Manuel Belgrano. ¿Cuál es?;Santo Tomé;Curuzú Cuatiá;Mercedes;Alvear;1
-HISTÓRICO-CULTURAL;El templete Sanmartiniano está en:;La Cruz;Paso de los Libres;Yapeyú;Loreto;2
-HISTÓRICO-CULTURAL;¿En qué año se inició el carnaval correntino?;1961;1981;1971;1991;0
-HISTÓRICO-CULTURAL;¿Cuándo se celebra el día del Chamamé en Argentina?;10 de junio;20 de febrero;19 de septiembre;15 de enero;2
-HISTÓRICO-CULTURAL;¿Qué fiesta Nacional se realiza en Bella Vista, Corrientes?;Fiesta Nacional de la Naranja;Fiesta Nacional de la Chacarera;Fiesta Nacional de la Frutilla;Fiesta Nacional de los Pescadores;0
-HISTÓRICO-CULTURAL;¿Qué cítricos produce en mayor cantidad la provincia de Corrientes?;Mandarinas;Naranjas;Limones;Pomelos;1
-HISTÓRICO-CULTURAL;¿En qué localidad nació San Martin?;Curuzú Cuatiá;Paso de los Libres;Goya;Yapeyú;3
+CHAMAME;La música y la danza que identifica a Corrientes es:;La chacarera;El chamamé;La polca;Folklore;1
+CHAMAME;En Corrientes se realiza uno de los festivales de música más importantes del país:;Festival Nacional del Folklore;Fiesta Nacional del Chamamé;Festival Nacional de la Música del Litoral;Festival Nacional de la Chacarera;1
+CHAMAME;¿Cuál es el instrumento principal del chamamé?;Acordeón;Guitarra;Piano;Violín;0
+CHAMAME;¿Quién es considerado el "Rey del Chamamé"?;Carlos Rivero;Juan Carlos Moreno;Raúl Barboza;Antonio Tarragó Ros;3
+CHAMAME;¿Dónde se realiza la Fiesta Nacional del Chamamé?;Anfiteatro Mario del Tránsito Cocomarola;Anfiteatro Jose Hernandez;Anfiteatro Pinin Palma;Anfiteatro Jose Maria;0
+CHAMAME;¿Qué reconocido autor escribió el tema "Estudiante del Interior"?;Terrago Ros;Mario Bofil;Teresa Paradi;Bocha Sheridan;1
+CHAMAME;¿Dónde se desarrolla el Festival Nacional del Auténtico Chamamé Tradicional?;Itá Ibaté;Mburucuyá;Loreto;San Miguel;1
+HISTORICO;En la provincia de Corrientes hay cuatro pueblos que forman parte de los 30 fundados por las Misiones Jesuíticas Guaraníes. Estos son:;San Carlos, Alvear, Santo Tomé, La Cruz y Yapeyú;Ituzaingó, Virasoro, Paso de los Libres y Monte Caseros;Mercedes, Curuzú Cuatiá, Bella Vista y Lavalle;Esquina, Goya, Santa Lucia, Bella vista;0
+HISTORICO;El soldado Juan Bautista Cabral, perteneciente al Regimiento de Granaderos a Caballo, nació en:;Saladas, Corrientes;Santa Rosa, Corrientes;Yapeyú, Corrientes;San Miguel;0
+HISTORICO;Una localidad correntina fue fundada el 16 de noviembre 1810 por Manuel Belgrano. ¿Cuál es?;Santo Tomé;Curuzú Cuatiá;Mercedes;Alvear;1
+HISTORICO;El templete Sanmartiniano está en:;La Cruz;Paso de los Libres;Yapeyú;Loreto;2
+HISTORICO;¿En qué año se inició el carnaval correntino?;1961;1981;1971;1991;0
+HISTORICO;¿Cuándo se celebra el día del Chamamé en Argentina?;10 de junio;20 de febrero;19 de septiembre;15 de enero;2
+HISTORICO;¿Qué fiesta Nacional se realiza en Bella Vista, Corrientes?;Fiesta Nacional de la Naranja;Fiesta Nacional de la Chacarera;Fiesta Nacional de la Frutilla;Fiesta Nacional de los Pescadores;0
+HISTORICO;¿Qué cítricos produce en mayor cantidad la provincia de Corrientes?;Mandarinas;Naranjas;Limones;Pomelos;1
+HISTORICO;¿En qué localidad nació San Martin?;Curuzú Cuatiá;Paso de los Libres;Goya;Yapeyú;3
 RELIGIOSO;¿Dónde se encuentra la Basílica de Itatí?;Concepción;Itatí;Santa Ana;San Miguel;1
 RELIGIOSO;¿Qué santo es patrono de la provincia de Corrientes?;San Juan Bautista;San Roque;Nuestra Señora de Itatí;San Francisco de Asís;2
 RELIGIOSO;¿Cuál es la iglesia más antigua de Corrientes?;Catedral de Corrientes;Iglesia de San Francisco;Iglesia de la Merced;Iglesia Santa Rita;2
-RELIGIOSO;¿En qué localidad se encuentra el santuario del Gauchito Gil?;Loreto;Mercedes;San Miguel;Concepción;1CARNAVAL;¿Cómo se llama el corsodromo de la ciudad de Corrientes?;Corsodromo Nolo Alias;Corsodromo Jose Hernandez;Corsodromo del Carnaval;Corsodromo Nacional del Carnaval;0
+RELIGIOSO;¿En qué localidad se encuentra el santuario del Gauchito Gil?;Loreto;Mercedes;San Miguel;Concepción;1
+CARNAVAL;¿Cómo se llama el corsodromo de la ciudad de Corrientes?;Corsodromo Nolo Alias;Corsodromo Jose Hernandez;Corsodromo del Carnaval;Corsodromo Nacional del Carnaval;0
 CARNAVAL;¿Cuál de estas comparsas es la más antigua del carnaval de Corrientes?;Copacabana y Ara Bera;Sapucay y Ara Bera;Arandú Beleza y Sapucay;Samba Total y Sambanda;0
 CARNAVAL;¿Qué comparsa ganó la última edición del carnaval de Corrientes?;Ara Berá;Sapucay;Copacabana;Samba Total;1
 CARNAVAL;¿Durante qué estación se realiza el Carnaval de Corrientes?;Verano;Primavera;Otoño;Invierno;0

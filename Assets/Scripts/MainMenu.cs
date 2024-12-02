@@ -25,13 +25,14 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Entrando por webgl");
-        StartCoroutine(GenerateCategoryTogglesWebGL());
-#else 
+#if UNITY_EDITOR
         Debug.Log("Entrando por Desktop");
         GenerateCategoryTogglesDesktop();
         toggleListeners();
+        
+#else
+        Debug.Log("Entrando por webgl");
+        StartCoroutine(GenerateCategoryTogglesWebGL());
         //toggleParent.transform.position = new Vector3(0, 0, 0);
 #endif
     }

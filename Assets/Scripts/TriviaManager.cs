@@ -32,14 +32,15 @@ public class TriviaManager : MonoBehaviour
     }
     public void StartTrivia(List<string> selectedCategories)
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Entrando por webgl");
-        StartCoroutine(LoadQuestionsFromFileWebGL("questions.txt", selectedCategories));
-#else
+#if UNITY_EDITOR
         Debug.Log("Entrando por Desktop");
         LoadQuestionsFromFileDesktop("questions.txt", selectedCategories);
         ShuffleQuestions();
         ShowNextQuestion();
+#else
+        Debug.Log("Entrando por webgl");
+        StartCoroutine(LoadQuestionsFromFileWebGL(selectedCategories));
+        
 #endif
     }
     public void LoadQuestionsFromFileDesktop(string fileName, List<string> selectedCategories)
@@ -73,9 +74,9 @@ public class TriviaManager : MonoBehaviour
         }
     }
 
-    public IEnumerator LoadQuestionsFromFileWebGL(string fileName, List<string> selectedCategories)
+    public IEnumerator LoadQuestionsFromFileWebGL(List<string> selectedCategories)
     {
-        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
         UnityWebRequest request = UnityWebRequest.Get(filePath);
 
         // Enviar la solicitud y esperar la respuesta
@@ -96,7 +97,7 @@ public class TriviaManager : MonoBehaviour
         foreach (string line in lines)
         {
             string[] parts = line.Split(';');
-            if (parts.Length == 7)
+            if (parts.Length >= 1)
             {
                 string category = parts[0];
                 if (selectedCategories.Contains(category))
@@ -127,7 +128,7 @@ public class TriviaManager : MonoBehaviour
         }
         questionIndexes.Shuffle();
         Debug.Log($"Question indexes {questionIndexes.Count} ");
-#if UNITY_WEBGL && !UNITY_EDITOR
+#if !UNITY_EDITOR
         Debug.Log("Entrando por webgl nextQuestion");
         ShowNextQuestion();
 #endif

@@ -4,44 +4,57 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 using System.Collections;
 using UnityEngine.Networking;
+using MongoDB.Bson.Serialization.Attributes;
+
 
 public class TriviaManager : MonoBehaviour
 {
     public Text questionText;
     public Text currentQuestion;
     public Text currentCat;
+    [BsonSerializer(typeof(Button[]))]
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
+    [BsonSerializer(typeof(List<Question>))]
     public List<Question> questions = new List<Question>();
+    [BsonSerializer(typeof(List<int>))]
     public List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
     public int currentQuestionIndex = -1; // Índice de la pregunta actual
-    [Serializable]
-    public class Question
+    [SerializeField] 
+    private GameManager m_gameManager = null; // Referencia al GameManager
+    private MongoClient mongoClient;
+    private IMongoDatabase database;
+    private void Start()
     {
-        public string question;
-        public string[] answers;
-        public int correctAnswerIndex;
-        public string catName;
-    }
-    [SerializeField] private GameManager m_gameManager = null; // Referencia al GameManager
-    void Start()
-    {
+        BsonClassMap.RegisterClassMap<Question>(cm =>
+        {
+            cm.AutoMap(); // Realiza el mapeo automático de las propiedades
+            cm.MapMember(c => c._id).SetElementName("_id"); // Mapea el campo '_id' si es necesario
+            cm.MapMember(c => c.question).SetElementName("question");
+            cm.MapMember(c => c.answers).SetElementName("answers");
+            cm.MapMember(c => c.correctAnswerIndex).SetElementName("correctAnswerIndex");
+            cm.MapMember(c => c.catName).SetElementName("catName");
+        });
         m_gameManager = FindObjectOfType<GameManager>();
-        
+        InitConnection();
+    }
+    private void InitConnection()
+    {
+        string connectionString = "mongodb://nicolas123:aHm1FcLmD01heZd5@leadmanagement-shard-00-00.eefur.mongodb.net:27017,leadmanagement-shard-00-01.eefur.mongodb.net:27017,leadmanagement-shard-00-02.eefur.mongodb.net:27017/?ssl=true&replicaSet=atlas-i7v84r-shard-0&authSource=admin&retryWrites=true&w=majority&appName=LeadManagement"; // Usa variables de entorno o un archivo seguro
+
+        var settings = MongoClientSettings.FromConnectionString(connectionString);
+        mongoClient = new MongoClient(connectionString);
+        database = mongoClient.GetDatabase("TriviaGame");
     }
     public void StartTrivia(List<string> selectedCategories)
     {
-#if UNITY_EDITOR
-        Debug.Log("Entrando por Desktop");
-        LoadQuestionsFromFileDesktop("questions.txt", selectedCategories);
+        StartCoroutine(LoadQuestionsFromDatabase(selectedCategories));
         ShuffleQuestions();
         ShowNextQuestion();
-#else
-        Debug.Log("Entrando por webgl");
-        StartCoroutine(LoadQuestionsFromFileWebGL(selectedCategories));
-        
-#endif
     }
     public void LoadQuestionsFromFileDesktop(string fileName, List<string> selectedCategories)
     {
@@ -73,7 +86,21 @@ public class TriviaManager : MonoBehaviour
             Debug.LogError("Questions file not found: " + filePath);
         }
     }
+    public IEnumerator LoadQuestionsFromDatabase(List<string> selectedCategories)
+    {
+        var collection = database.GetCollection<Question>("Questions");
+        // Filtro para las categorías seleccionadas
+        var filter = Builders<Question>.Filter.In(q => q.catName, selectedCategories);
 
+        // Obtener las preguntas de la base de datos
+        var fetchedQuestions = collection.Find(filter).ToListAsync().Result;
+
+        questions.Clear();
+        questions.AddRange(fetchedQuestions);
+        Debug.Log(fetchedQuestions[0].question);
+        Debug.Log(questions[0]);
+        yield return null;
+    }
     public IEnumerator LoadQuestionsFromFileWebGL(List<string> selectedCategories)
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
@@ -119,92 +146,63 @@ public class TriviaManager : MonoBehaviour
     }
     void ShuffleQuestions()
     {
-        // Genera una lista de índices de preguntas mezclada
         questionIndexes.Clear();
-        Debug.Log($"Questions count {questions.Count} ");
         for (int i = 0; i < questions.Count; i++)
         {
             questionIndexes.Add(i);
         }
         questionIndexes.Shuffle();
-        Debug.Log($"Question indexes {questionIndexes.Count} ");
-#if !UNITY_EDITOR
-        Debug.Log("Entrando por webgl nextQuestion");
-        ShowNextQuestion();
-#endif
-
     }
     public void ShowNextQuestion()
     {
         foreach (Button button in answerButtons)
         {
-            button.GetComponent<Image>().color = Color.white; // Restablecer a color blanco o el color original
+            button.GetComponent<Image>().color = Color.white;
         }
         if (AllQuestions())
         {
-            Debug.Log("Todas las respuestas respondidas");
+            Debug.Log("Todas las preguntas respondidas");
             m_gameManager.showWinnerScreen(true);
             StartCoroutine(m_gameManager.WaitAndEnd(5f));
             return;
         }
-        else
+
+        if (!m_gameManager.checkScore()) currentQuestion.text = ("Pregunta " + (currentQuestionIndex + 1).ToString() + " / " + questionIndexes.Count.ToString());
+        int questionIndex = questionIndexes[currentQuestionIndex];
+        Question currentQuestionData = questions[questionIndex];
+
+        questionText.text = currentQuestionData.question;
+        currentCat.text = currentQuestionData.catName;
+
+        List<int> answerIndexes = new List<int>() { 0, 1, 2, 3 };
+        answerIndexes.Shuffle();
+
+        for (int i = 0; i < answerButtons.Length; i++)
         {
-            if (!m_gameManager.checkScore()) currentQuestion.text = ("Pregunta " + (currentQuestionIndex + 1).ToString() + " / " + questionIndexes.Count.ToString());
-            if (questionIndexes.Count > 0)
-            {
-                int questionIndex = questionIndexes[currentQuestionIndex];
-                Question currentQuestion = questions[questionIndex];
-                questionText.text = currentQuestion.question;
-                currentCat.text = currentQuestion.catName;
-                // Mezclar el orden de las respuestas
-                List<int> answerIndexes = new List<int>() { 0, 1, 2, 3 };
-                answerIndexes.Shuffle();
-                Debug.Log("AnswerButton lenght: " + answerButtons.Length);
-                for (int i = 0; i < answerButtons.Length; i++)
-                {
-                    int answerIndex = answerIndexes[i];
-                    answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[answerIndex];
-                    answerButtons[i].onClick.RemoveAllListeners();
-                    int buttonIndex = i;
-                    answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestion));
-                }
-            }
-            else
-            {
-                Debug.LogError("No questions available");
-            }
+            int answerIndex = answerIndexes[i];
+            answerButtons[i].GetComponentInChildren<Text>().text = currentQuestionData.answers[answerIndex];
+            answerButtons[i].onClick.RemoveAllListeners();
+            int buttonIndex = i;
+            answerButtons[i].onClick.AddListener(() =>
+                OnAnswerSelected(answerButtons[buttonIndex], answerIndex, currentQuestionData));
         }
-        
     }
     void OnAnswerSelected(Button selectedButton, int answerIndex, Question qst)
     {
-        Debug.Log(selectedButton);
-        int selectedAnswerIndex = 0;
-        for (int i = 0; i < answerButtons.Length; i++)
-        {
-            if (answerButtons[i] == selectedButton)
-            {
-                selectedAnswerIndex = i;
-                break;
-            }
-        }
         if (answerIndex == qst.correctAnswerIndex)
         {
             StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton, true));
         }
         else
         {
-            if (PlayerPrefs.GetInt("ModoEvento") is 0 )
+            foreach (Button btn in answerButtons)
             {
-                foreach (Button btn in answerButtons)
+                if (btn.GetComponentInChildren<Text>().text == qst.answers[qst.correctAnswerIndex])
                 {
-                    if (btn.GetComponentInChildren<Text>().text == qst.answers[qst.correctAnswerIndex])
-                    {
-                        m_gameManager.ShowCorrectOnFail(btn);
-                    }
+                    m_gameManager.ShowCorrectOnFail(btn);
                 }
             }
-            StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton.GetComponent<Button>(), false));
+            StartCoroutine(m_gameManager.GiveAnswerRoutine(selectedButton, false));
         }
     }
     public void GameOver()

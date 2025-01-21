@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,7 +31,7 @@ public class MainMenu : MonoBehaviour
         
 #else
         Debug.Log("Entrando por webgl");
-        StartCoroutine(GenerateCategoryTogglesWebGL());
+        GenerateCategoryTogglesWebGL();
         //toggleParent.transform.position = new Vector3(0, 0, 0);
 #endif
     }
@@ -77,41 +76,20 @@ public class MainMenu : MonoBehaviour
         categoryToggles = togglesList.ToArray();
         //toggleParent.transform.position = Vector3.zero;
     }
-    public IEnumerator GenerateCategoryTogglesWebGL()
+    public void GenerateCategoryTogglesWebGL()
     {
         List<Toggle> togglesList = new List<Toggle>(); // Usamos una lista temporal para agregar los toggles
-        HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categorías únicas
-
-        string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
-        UnityWebRequest request = UnityWebRequest.Get(filePath);
-
-        // Enviar la solicitud y esperar la respuesta
-        yield return request.SendWebRequest();
-
-        // Verificar errores de conexi�n
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        List<string> internalCategories = new List<string>
         {
-            Debug.LogError("Error al cargar el archivo: " + request.error);
-            yield break;
-        }
+        "AMBIENTAL", "CULTURA", "GEOGRAFIA", "HISTORIA", "DEPORTES", "BIOLOGIA" // Aquí agregas las categorías que quieras
+        };
 
         // Leer el contenido del archivo
-        Debug.Log($"Request {request} {request.downloadHandler.text}");
-        string[] lines = request.downloadHandler.text.Split('\n');
-        foreach (string line in lines)
+        foreach (string category in internalCategories)
         {
-            string[] parts = line.Split(';');
-            if (parts.Length >= 1)
-            {
-                string category = parts[0];
-                if (!uniqueCategories.Contains(category))
-                {
-                    // Si la categoría no existe, creamos el toggle y lo agregamos a la lista temporal
-                    Toggle newToggle = CreateToggle(category);
-                    togglesList.Add(newToggle);
-                    uniqueCategories.Add(category); // Agregamos la categoría al HashSet para evitar duplicados
-                }
-            }
+                // Si la categoría no existe, creamos el toggle y lo agregamos a la lista temporal
+                Toggle newToggle = CreateToggle(category);
+                togglesList.Add(newToggle);
         }
         categoryToggles = togglesList.ToArray();
         //toggleParent.transform.position = Vector3.zero;
@@ -139,6 +117,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log(PlayerPrefs.GetString(selectedCategoriesKey));
         Debug.Log(PlayerPrefs.GetInt("ScoreLimit"));
         SceneManager.LoadScene("Game");
+
     }
     public void ExitButton()
     {

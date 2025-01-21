@@ -32,11 +32,14 @@ public class GameManager : MonoBehaviour
     {
         SetSelectedCategories();
         m_triviaManager = FindObjectOfType<TriviaManager>();
-        m_score = 0;
-        timeLeft = totalTime;
         timerStarted = false;
+        m_score = -1;
+        StartTrivia();
+        
+        timeLeft = totalTime;
+        
         m_anim = timerBar.GetComponent<Animator>();
-        StartTrivia(); // Inicia la secuencia de preguntas
+         // Inicia la secuencia de preguntas
         //rankingUI.OnLevelWasLoaded(1);
     }
     public void SetSelectedCategories()
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
             timeLeft -= Time.deltaTime; // Decrement time left
             if (timeLeft <= 0.0f)
             {
+                Debug.Log("FIN DEL TIEMPO");
                 EndTimer(); // End timer when time is up
             }
         }

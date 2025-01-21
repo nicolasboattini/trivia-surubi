@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.Networking;
+using static TriviaManager;
 
 public class TriviaManager : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class TriviaManager : MonoBehaviour
     public List<Question> questions = new List<Question>();
     public List<int> questionIndexes = new List<int>(); // Índices de las preguntas que se han mostrado
     public int currentQuestionIndex = -1; // Índice de la pregunta actual
+    [System.Serializable]
+    public class QuestionListWrapper
+    {
+        public Question[] questions;  // Lista de preguntas
+    }
     [Serializable]
     public class Question
     {
@@ -37,11 +43,43 @@ public class TriviaManager : MonoBehaviour
         LoadQuestionsFromFileDesktop("questions.txt", selectedCategories);
         ShuffleQuestions();
         ShowNextQuestion();
+        m_gameManager.m_score = 0;
+        
 #else
         Debug.Log("Entrando por webgl");
-        StartCoroutine(LoadQuestionsFromFileWebGL(selectedCategories));
+        StartCoroutine(FetchQuestionsFromAPI(selectedCategories));
         
 #endif
+    }
+    public IEnumerator FetchQuestionsFromAPI(List<string> selectedCategories)
+    {
+        string apiUrl = "https://dashboard-gamecenter.corrientes.gob.ar/api/questions/";
+        UnityWebRequest request = UnityWebRequest.Get(apiUrl);
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error fetching questions: " + request.error);
+        }
+        else
+        {
+            string jsonResponse = request.downloadHandler.text;
+            Debug.Log(jsonResponse);
+            jsonResponse = "{\"questions\":" + jsonResponse + "}";
+            Debug.Log(jsonResponse);
+            QuestionListWrapper fetchedQuestionsWrapper = JsonUtility.FromJson<QuestionListWrapper>(jsonResponse);
+
+            List<Question> filteredQuestions = new List<Question>();
+            foreach (Question q in fetchedQuestionsWrapper.questions)
+            {
+                if (selectedCategories.Contains(q.catName))
+                {
+                    filteredQuestions.Add(q);
+                }
+            }
+            questions = filteredQuestions; // Carga las preguntas en la lista
+            ShuffleQuestions();
+        }
     }
     public void LoadQuestionsFromFileDesktop(string fileName, List<string> selectedCategories)
     {
@@ -128,9 +166,11 @@ public class TriviaManager : MonoBehaviour
         }
         questionIndexes.Shuffle();
         Debug.Log($"Question indexes {questionIndexes.Count} ");
+
 #if !UNITY_EDITOR
         Debug.Log("Entrando por webgl nextQuestion");
         ShowNextQuestion();
+        m_gameManager.m_score = 0;
 #endif
 
     }

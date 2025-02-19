@@ -249,6 +249,11 @@ public class TriviaManager : MonoBehaviour
     }
     public void GameOver()
     {
+        if (m_gameManager.Landscape)
+        {
+            SceneManager.LoadScene("MenuHor");
+            return;
+        }
         SceneManager.LoadScene("MainMenu");
     }
     public bool AllQuestions()

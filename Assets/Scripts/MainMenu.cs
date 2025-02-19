@@ -116,6 +116,11 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log(PlayerPrefs.GetString(selectedCategoriesKey));
         Debug.Log(PlayerPrefs.GetInt("ScoreLimit"));
+        if (togglePrefab.name == "TOGGLE PREFAB HOR")
+        {
+            SceneManager.LoadScene("GameHor");
+            return;
+        }
         SceneManager.LoadScene("Game");
 
     }

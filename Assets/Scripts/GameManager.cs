@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject timerBar;
     public GameObject winnerScreen;
     public GameObject rankingScreen;
+    public bool Landscape;
     private Animator m_anim;
     public float totalTime = 0.0f; // Total time for the quiz
     private float timeLeft; // Time left for the quiz
@@ -166,6 +167,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         PlayerPrefs.DeleteKey("SelectedCategories");
+        if (Landscape)
+        {
+            SceneManager.LoadScene("MenuHor");
+            return;
+        }
         SceneManager.LoadScene("MainMenu");
     }
     private void OnApplicationQuit()

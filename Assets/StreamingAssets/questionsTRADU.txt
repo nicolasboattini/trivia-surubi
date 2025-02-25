@@ -184,8 +184,3 @@ BIOLOGY;What is the main color of the red macaw’s plumage?;Blue;Green;Red;Yell
 BIOLOGY;What was the natural habitat of the red macaw in Argentina?;Northern deserts;Northeastern jungles;Southern mountains;Central plains;1
 BIOLOGY;What is the scientific name for the red-legged seriema?;Cariama cristata;Seriema cristata;Tinamus solitarius;Rhea americana;1
 BIOLOGY;The red-legged seriema is…;Herbivorous;Frugivorous;Insectivorous and carnivorous;Granivorous;2
-
-
-
-
-

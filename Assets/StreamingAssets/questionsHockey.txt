@@ -1,0 +1,26 @@
+HOCKEY;¿Cuántos jugadores hay en cada equipo en un partido de hockey sobre césped?;9;12;11;10;2
+HOCKEY;¿Cuánto dura cada cuarto en un partido oficial de hockey sobre césped?;20 minutos;15 minutos;12 minutos;18 minutos;1
+HOCKEY;¿Cuántos cuartos tiene un partido de hockey sobre césped?;2;5;4;3;2
+HOCKEY;¿Cuál es la medida estándar de un campo de hockey sobre césped?;91,4 x 55 metros;100 x 60 metros;85 x 50 metros;70 x 40 metros;0
+HOCKEY;¿Qué material es el balón oficial del hockey sobre césped?;Cuero;Caucho;Plástico duro;Metal;2
+HOCKEY;¿Cuántos jugadores debe haber como mínimo en el equipo para que el partido comience?;8;10;9;7;3
+HOCKEY;¿Qué acción está prohibida durante un penalty corner?;Correr después del silbato;Jugar la bola con el stick por debajo del hombro;Levantar la bola intencionadamente dentro del área;Empujar la bola hacia adelante;2
+HOCKEY;¿Qué tipo de faltas se sancionan con una tarjeta roja?;Juego peligroso;Pérdida de tiempo;Desobedecer al árbitro;Faltas leves reiteradas;0
+HOCKEY;¿Cuántas tarjetas diferentes puede mostrar el árbitro en un partido?;2;4;3;5;2
+HOCKEY;¿Qué acción NO está permitida en hockey sobre césped?;Jugar con el lado plano del stick;Levantar el stick por encima del hombro;Golpear con el borde del stick;Controlar la bola con el cuerpo;3
+HOCKEY;¿Cuántos jugadores pueden estar dentro del círculo durante un penalty corner?;Todos los jugadores defensivos;Máximo 5 jugadores defensivos;Ningún jugador;3 jugadores defensivos;1
+HOCKEY;¿Cuándo se sanciona con un penalty stroke?;Cuando un jugador ataca con el pie;Cuando se comete una falta intencional en el área;Cuando el portero sale de su línea;Cuando un equipo no sigue la formación;1
+HOCKEY;¿Qué distancia mínima debe respetar un jugador en un golpe franco?;4 metros;7 metros;5 metros;3 metros;2
+HOCKEY;¿Qué señal hace el árbitro para un penalty stroke?;Levanta una mano;Apunta hacia el punto de stroke;Hace un gesto de círculo;Levanta ambas manos;1
+HOCKEY;¿Cuántas sustituciones puede hacer un equipo en un partido?;Ilimitadas;5;3;10;0
+HOCKEY;¿Cuál es el diámetro del balón de hockey sobre césped?;10 cm;7 cm;12 cm;5 cm;1
+HOCKEY;¿Qué equipo gana un partido de hockey sobre césped?;El que tenga menos tarjetas;El que marque más goles;El que tenga mayor posesión;El que tenga más penalty corners;1
+HOCKEY;¿Qué es una tarjeta verde?;Amonestación leve sin sanción de tiempo;Suspensión temporal de 2 minutos;Expulsión definitiva;Advertencia verbal;1
+HOCKEY;¿Qué debe hacer un equipo si un jugador recibe una tarjeta amarilla?;Jugar con un jugador menos;Sustituir al jugador inmediatamente;Hacer un saque desde la línea;Jugar sin portero;0
+HOCKEY;¿Qué equipo saca desde el centro del campo tras un gol?;El equipo que ha marcado el gol;El equipo contrario;El equipo defensor;Se decide por sorteo;1
+HOCKEY;¿Qué se considera juego peligroso en hockey sobre césped?;Jugar el balón por el aire cuando no hay riesgo;Poner en riesgo la integridad del adversario;Golpear el balón por el lateral;Bloquear el stick del rival;1
+HOCKEY;¿Cuánto tiempo puede tener el portero la bola en su posesión?;5 segundos;10 segundos;3 segundos;Tiempo ilimitado;3
+HOCKEY;¿Qué color de tarjeta indica una expulsión definitiva del partido?;Amarilla;Verde;Azul;Roja;3
+HOCKEY;¿Cuándo se utiliza el video arbitraje en un partido internacional?;Siempre que lo pida el equipo;En situaciones críticas de gol o penalti;Para corregir cualquier falta;Solo en las finales;1
+HOCKEY;¿Cómo se decide el saque inicial de un partido?;Sorteo con monedas;Elige la visita;Elige el árbitro;Elige el local;0
+HOCKEY;¿Cuántos árbitros dirigen un partido oficial de hockey sobre césped?;1;3;2;4;2

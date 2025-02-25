@@ -1,0 +1,30 @@
+Beginners;What does the word “Hallow” mean?;Saint;Spooky;Spirit;Evil;0
+Beginners;What were the first Jack-O-Lanterns made of?;Oranges;Tomatoes; Pumpkins;Turnips;3
+Beginners;What are modern Jack-o’-Lanterns made of?;Candies;Pumpkins;Zucchini;Oranges;1
+Beginners;What country did Halloween originate in?;The USA;Ireland;  Canada;England; 1
+Beginners;What colours are most associated with Halloween?;Green and black;Blue and red;Red and white;Black and Orange;3
+Beginners;What do children ask for when they go from door to door?;Treats;Tricks;Chocolate;Coins;0
+Beginners;When is Halloween celebrated?;30th October; 31st October;30th November;29th November;1
+Beginners;Which animal is often associated with witches?;Dog;Cat;Cow;Rabbit;1
+Beginners;What do people put inside a carved pumpkin?;Candy;Water;Candle;Flowers;2
+Beginners;What do people often hang outside their houses for Halloween?;Flowers;Balloons;Spiders and webs;Stars;2
+Intermediate;What do people traditionally carve on Halloween?;Apples;Pumpkins;Watermelons;Potatoes;1
+Intermediate;What do children say when they go door-to-door asking for candy?; “Give me some candy!”; “Happy Halloween!”;“Trick or treat!”; “Treat or trick!”;2
+Intermediate;Which of the following is not commonly associated with Halloween?;Witches;Ghosts; Vampires;Reindeers;3
+Intermediate;Which symbol is not often used to represent witches on Halloween?;A broomstick;A white horse;A crystal ball;A cauldron;1
+Intermediate;What is another name for Halloween? ;The Night of the Dead;All Hallows' Eve;Ghostly Day;Spooky Night;1
+Intermediate;What is the name of the Halloween movie featuring three witches resurrected after 300 years?;The Witches;Hocus Pocus;The Craft;Practical Magic;1
+Intermediate;Which famous novel begins with Jonathan Harker traveling to Transylvania to visit a mysterious count?;Frankenstein;The Picture of Dorian Gray;The Phantom of the Opera;Dracula;3
+Intermediate;Which country celebrates the "Day of the Dead" around the same time as Halloween?;Japan;Spain;Mexico;Greece;2
+Intermediate;Where does a witch cook her magic potions?;In a bin;In a cauldron;In a bath;In a pool;1
+Intermediate;How does a werewolf look like?;Half man, half wolf;Half man, half cat;Half dog, half wolf;Half bat, half man;0
+Upper intermediate;Why did Halloween become particularly popular in the United States in the late 19th century?;Because of a strong interest in Irish folklore;Due to the arrival of Irish and Scottish immigrants;Because the government declared it a national holiday;Because of the rise of the film industry;1
+Upper intermediate;Which of the following best describes the tradition of "soul cakes" during Halloween in medieval times?;Cakes baked to honor deceased relatives;Cakes given to beggars in exchange for prayers for the dead;Cakes left at doorsteps to ward off evil spirits;Cakes shared among family members as a sign of unity;1
+Upper intermediate;Why do people traditionally light bonfires on Halloween?;To celebrate the coming of winter;To keep animals away from crops;To cook food for the feast;To scare away evil spirits;3
+Upper intermediate;What was the original purpose of wearing masks on Halloween during ancient Celtic traditions?;To honor deceased ancestors;To celebrate good harvests;To predict the future;To confuse and scare evil spirits;3
+Upper intermediate;The modern practice of Halloween is thought to have evolved from which ancient festival marking the end of the harvest season?;Saturnalia;Samhain;All Souls' Day;Beltane;1
+Upper intermediate;What does the term “trick-or-treat” originally imply?;A promise to share treats with friends;A playful threat to perform mischief if no candy is given;A tradition of offering homemade food in exchange for good luck.;A way to celebrate the fall harvest with neighbors;1
+Upper intermediate;What were the original “soul cakes” in medieval times, which may have been a precursor to modern trick-or-treating?;Bread given to the poor in exchange for prayers;Cakes used in wedding ceremonies;Cakes made to honor ancestors;Sweets given as offerings to spirits;0
+Upper intermediate;According to medieval folklore, what was the purpose of placing a candle in a carved pumpkin or turnip on Halloween?;To invite good spirits; To light the way for travelers;To scare away evil spirits;To honor the dead;2
+Upper intermediate;In some cultures, Halloween is seen as a time when the veil between the living and the dead is the thinnest. What term is often used to describe this concept?;The Twilight Hour;The Witching Hour;The Dead Man's Time;The Liminal Time;3
+Upper intermediate;In modern Wiccan tradition, what is the significance of Samhain (Halloween)?;It marks the beginning of the Wiccan New Year;It is a time for casting spells;It is a fertility festival;It celebrates the return of the sun;0

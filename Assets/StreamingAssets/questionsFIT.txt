@@ -1,0 +1,51 @@
+IBERA;Que significa Ibera?;Aguas brillantes;Aguas turbias;Mar tranquilo;Rio Brillante;0
+IBERA;Que animal está en peligro de extinción?;Yaguarete;Carpincho;Yacare;Mono Carayá;0
+IBERA;Los tucanes son de la especie:;Ovíparos;Mamíferos;Insectos;Vivíparos;0
+IBERA;Cuáles de estas especies son monumentos Naturales en Corrientes:;Carpincho;Ciervo de los pantanos;Garza blanca;Carayá;1
+IBERA;En Iberá cuantos portales de accesos hay:;Cinco 5;Ocho 8;Diez 10;Doce 12;2
+IBERA;Qué porcentaje de Aves de la Argentina reside en Iberá:;33%;12%;50%;35%;0
+IBERA;El Ibera es un ecosistema, ¿Qué porcentaje del territorio Correntino ocupa?;3%;35%;14%;18%;2
+IBERA;Actividades que se pueden realizar en Ibera:;Rafting;Escalada;Avistaje de Flora y Fauna;Parapente;2
+IBERA;¿Qué departamentos abarcan los Esteros del Iberá?;Capital, Itatí, Caá Catí y Goya;Empedrado, San Cosme, San Luis del Palmar y Santo Tomé;Ituzaingó, Mercedes, San Miguel y Concepción;Paso de los Libres, Monte Caseros, Beron de Astrada y Sauce;2
+IBERA;¿Qué animal se considera Fauna Amenazada del Parque Iberá?;Yaguareté;Nutria gigante;Oso hormiguero gigante;Todas son correctas;3
+IBERA;¿Cuál es el felino autóctono más grande de la Provincia de Corrientes?;El Yaguareté;El Ocelote;El Gato montés;El Tirica;0
+IBERA;¿Como se llama el reptil mas grande de corrientes?;Yarará;Pitón;Boa;Yacaré;3
+IBERA;¿Cuál es el roedor mas conocido de Corrientes?;Cuy;Rata;Carpincho;Conejo;2
+PESCA;Modalidad de pesca utilizada para pesca deportiva:;Spinning;Surfcasting;Popping;Trekking;0
+PESCA;A que pez se lo conoce como TIGRE del Paraná?;Pacú;Surubí;Dorado;Boga;2
+PESCA;Que significa la VEDA?;No hacer nada para impedir que ocurra algo;Tiempo durante el cual está prohibido pescar en un lugar o especie;Lapso durante el cual se permite realizar la actividad;Pesca y Devolución;1
+PESCA;Que significa PESCA Y DEVOLUCIÓN?;Garantizar la pesca en el futuro;Conseguir el mayor número de ejemplares en el menor tiempo posible;Pescar una buena cantidad, calidad y portes de variadas especies;Permitir la captura de especies protegidas por un tiempo limitado;0
+PESCA;¿Dónde se celebra la Fiesta Nacional del Dorado?;Paso de la Patria;Esquina;Riachuelo;Itatí;0
+PESCA;¿Dónde se celebra la Fiesta Nacional del Pacú?;Esquina;Goya;Riachuelo;Itatí;0
+PESCA;¿Donde se celebra la Fiesta nacional del Surubí?;Paso de la Patria;Esquina;Goya;Ituzaingó;2
+SOL Y PLAYA;La provincia de Corrientes cuenta con hermosas playas de arena para disfrutar de la temporada de verano. Estas playas se encuentran sobre:;Ríos;Lagos;Lagunas;Ríos y lagunas;3
+SOL Y PLAYA;¿Cuál es la playa más popular de la Ciudad de Corrientes?;Playa Islas Malvinas;Playa Itatí;Playa Arazatí;Playa Arandu;2
+SOL Y PLAYA;¿Qué río baña las playas de Corrientes?;Río Paraná y Rio Uruguay;Río Uruguay y Rio Iguazu;Río Paraná y Rio Corriente;Rio Uruguay y Rio Corriente;0
+SOL Y PLAYA;¿Qué actividad es común en las playas de Corrientes?;Kayak y Pesca;Pesca y Navegación;KiteSurf y navegación;Windsurf y Pesca;0
+CHAMAME;La música y la danza que identifica a Corrientes es:;La chacarera;El chamamé;La polca;Folklore;1
+CHAMAME;En Corrientes se realiza uno de los festivales de música más importantes del país:;Festival Nacional del Folklore;Fiesta Nacional del Chamamé;Festival Nacional de la Música del Litoral;Festival Nacional de la Chacarera;1
+CHAMAME;¿Cuál es el instrumento principal del chamamé?;Acordeón;Guitarra;Piano;Violín;0
+CHAMAME;¿Quién es considerado el "Rey del Chamamé"?;Carlos Rivero;Juan Carlos Moreno;Raúl Barboza;Antonio Tarragó Ros;3
+CHAMAME;¿Dónde se realiza la Fiesta Nacional del Chamamé?;Anfiteatro Mario del Tránsito Cocomarola;Anfiteatro Jose Hernandez;Anfiteatro Pinin Palma;Anfiteatro Jose Maria;0
+CHAMAME;¿Qué reconocido autor escribió el tema "Estudiante del Interior"?;Terrago Ros;Mario Bofil;Teresa Paradi;Bocha Sheridan;1
+CHAMAME;¿Dónde se desarrolla el Festival Nacional del Auténtico Chamamé Tradicional?;Itá Ibaté;Mburucuyá;Loreto;San Miguel;1
+HISTORICO;En la provincia de Corrientes hay cuatro pueblos que forman parte de los 30 fundados por las Misiones Jesuíticas Guaraníes. Estos son:;San Carlos, Alvear, Santo Tomé, La Cruz y Yapeyú;Ituzaingó, Virasoro, Paso de los Libres y Monte Caseros;Mercedes, Curuzú Cuatiá, Bella Vista y Lavalle;Esquina, Goya, Santa Lucia, Bella vista;0
+HISTORICO;El soldado Juan Bautista Cabral, perteneciente al Regimiento de Granaderos a Caballo, nació en:;Saladas, Corrientes;Santa Rosa, Corrientes;Yapeyú, Corrientes;San Miguel;0
+HISTORICO;Una localidad correntina fue fundada el 16 de noviembre 1810 por Manuel Belgrano. ¿Cuál es?;Santo Tomé;Curuzú Cuatiá;Mercedes;Alvear;1
+HISTORICO;El templete Sanmartiniano está en:;La Cruz;Paso de los Libres;Yapeyú;Loreto;2
+HISTORICO;¿En qué año se inició el carnaval correntino?;1961;1981;1971;1991;0
+HISTORICO;¿Cuándo se celebra el día del Chamamé en Argentina?;10 de junio;20 de febrero;19 de septiembre;15 de enero;2
+HISTORICO;¿Qué fiesta Nacional se realiza en Bella Vista, Corrientes?;Fiesta Nacional de la Naranja;Fiesta Nacional de la Chacarera;Fiesta Nacional de la Frutilla;Fiesta Nacional de los Pescadores;0
+HISTORICO;¿Qué cítricos produce en mayor cantidad la provincia de Corrientes?;Mandarinas;Naranjas;Limones;Pomelos;1
+HISTORICO;¿En qué localidad nació San Martin?;Curuzú Cuatiá;Paso de los Libres;Goya;Yapeyú;3
+RELIGIOSO;¿Dónde se encuentra la Basílica de Itatí?;Concepción;Itatí;Santa Ana;San Miguel;1
+RELIGIOSO;¿Qué santo es patrono de la provincia de Corrientes?;San Juan Bautista;San Roque;Nuestra Señora de Itatí;San Francisco de Asís;2
+RELIGIOSO;¿Cuál es la iglesia más antigua de Corrientes?;Catedral de Corrientes;Iglesia de San Francisco;Iglesia de la Merced;Iglesia Santa Rita;2
+RELIGIOSO;¿En qué localidad se encuentra el santuario del Gauchito Gil?;Loreto;Mercedes;San Miguel;Concepción;1
+CARNAVAL;¿Cómo se llama el corsodromo de la ciudad de Corrientes?;Corsodromo Nolo Alias;Corsodromo Jose Hernandez;Corsodromo del Carnaval;Corsodromo Nacional del Carnaval;0
+CARNAVAL;¿Cuál de estas comparsas es la más antigua del carnaval de Corrientes?;Copacabana y Ara Bera;Sapucay y Ara Bera;Arandú Beleza y Sapucay;Samba Total y Sambanda;0
+CARNAVAL;¿Qué comparsa ganó la última edición del carnaval de Corrientes?;Ara Berá;Sapucay;Copacabana;Samba Total;1
+CARNAVAL;¿Durante qué estación se realiza el Carnaval de Corrientes?;Verano;Primavera;Otoño;Invierno;0
+CARNAVAL;¿Dónde se realiza el show de Comparsas?;Anfiteatro Mario del Tránsito Cocomarola;Anfiteatro Jose Hernandez;Anfiteatro Pinin Palma;Anfiteatro Jose Maria;0
+CARNAVAL;¿La Comparsa Ara Bera con qué símbolo se identifica?;Un Gallo;Un Rayo;Un loro;Un yaguareté;1
+CARNAVAL;¿La Comparsa Sapucay con qué símbolo se identifica?;Un Yaguareté;Un Gallo;Un Carpincho;Un Loro;1

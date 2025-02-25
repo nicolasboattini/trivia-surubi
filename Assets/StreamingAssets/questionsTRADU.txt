@@ -1,0 +1,191 @@
+ENVIRONMENT;How should waste be sorted?;Paper and glass;Biodegradable and non-biodegradable;Organic and inorganic;Paper and others;2
+ENVIRONMENT;Which is the best way to avoid forest fires according to the local government advertising spot?;Keep the grass of houses short;Avoid the use of fire and grasslands burning;Do not throw cigarettes or matches to the floor;Water plants and grasslands;1
+ENVIRONMENT;Which is an organic waste?;Pizza leftovers;Batteries;Glass bottles;Cardboard;0
+ENVIRONMENT;What's a hazardous waste?;Aluminum cans;Batteries;Glass bottles;Cardboard;1
+ENVIRONMENT;When is Global Recycling Day celebrated?;May 20th;April 19th;April 4th;May 17th;3
+ENVIRONMENT;What project is currently being launched for the Bare-faced curassow?;Genetic Conservation Project;Reintroduction Project in Parque Iberá;Behavioral Study Project;Invasive Species Eradication Project;1
+ENVIRONMENT;How long does it take for plastic bottles to decompose?;800 years;500 years;1000 years;250 years;1
+ENVIRONMENT;How long does it take for batteries to degrade?;From 500 to 1000 years;From 5 to 30 years;From 100 to 300 years;From 1000 to 3000 years;0
+ENVIRONMENT;How long does it take for plastic bags to decompose?;Between 100 and 150 years;55 years;300 years;Between 150 and 300 years;1
+ENVIRONMENT;How long does it take for aluminum cans to decompose?;10 months;1 year;10 years;5 years;2
+ENVIRONMENT;What is the name of the application launched by the local government to detect fire outbreaks?;Alto al fuego;Corrientes sin fuego;Alerta Incendios;Alertas Corrientes;3
+ENVIRONMENT;What is the conservation status of the ocelot?;Critically endangered;Vulnerable;Extinct in the wild;Minor concern;1
+ENVIRONMENT;Which color is the bin used for recycling organic waste?;Yellow;Red;Brown;Green;2
+ENVIRONMENT;Which color is the bin used for recycling dangerous waste?;Red;Brown;Yellow;Black;0
+ENVIRONMENT;Which color is the bin for recycling aluminum?;Red;Grey;Orange;Blue;1
+ENVIRONMENT;Which color is the recycling bin for plastic?;Green;Grey;Orange;Yellow;3
+ENVIRONMENT;What is one of the main reasons for the decreasing number of Pampas deers?;Climate change;Hunting and environment degradation;Water shortage;Interspecific competition;1
+ENVIRONMENT;Which color is the bin used for recycling glass?;Yellow;White;Blue;Gray;1
+ENVIRONMENT;What animal of Ibera Park is considered endangered?;Jaguar;Giant otter;Maned wolf;All of the above;3
+ENVIRONMENT;Which color is the bin used for recycling paper and cardboard?;Green;Blue;Brown;Yellow;1
+ENVIRONMENT;Which one of these options is a sustainable agricultural practice?;Monoculture with intensive use of pesticides;Crop rotation and organic farming;Deforestation to create new farmland;Excessive use of water for irrigation;1
+ENVIRONMENT;Which is the main cause of forest fires?;Burning of grasslands for livestock;Volcanic activity;Lightning strikes;Extreme drought;0
+ENVIRONMENT;What percentage of the surface area of Corrientes province is covered by wetlands?;10%;20%;30%;40%;3
+ENVIRONMENT;Which national law protects Argentina's native forests?;Ley de Bosques (Ley 26.331);Ley de Parques Nacionales (Ley 23.509);Ley de Glaciares y Aguas de Deshielo (Ley 25.665);Ley de Recursos Hídricos (Ley 25.667);0
+ENVIRONMENT;Which is the main source of renewable energy in Argentina?;Solar energy;Wind energy;Hydroelectric energy;Biomass;2
+ENVIRONMENT;Which international organization works to protect the environment in Argentina?;The Nature Conservancy;World Wildlife Fund (WWF);BirdLife International;International Union for Conservation of Nature (IUCN);1
+ENVIRONMENT;Which is the most critical environmental problem that the province is facing?;Air pollution;Water pollution;Deforestation;Desertification;2
+CULTURE;Which city is the Pacú National Festival celebrated in?;Esquina;Goya;Riachuelo;Itatí;0
+CULTURE;Complete the following phrase: “Corrientes has ______.”;Chamamé;Payé (meaning: charm);Tradition;Beauty;1
+CULTURE;Where in Corrientes is the Cattle Branding Festival celebrated?;Concepción;Ituzaingó;Caá Catí;Esquina;1
+CULTURE;Where was Governor Gustavo Valdés born?;Capital;Goya;Itatí;Ituzaingó;3
+CULTURE;Complete the phrase: “Soak up a dose of ______.”;energy;fishing;mate;chamamé;3
+CULTURE;If families do not celebrate Karaí Octubre they will suffer food shortages…;the beginning of the year;their whole life;the rest of the year;a whole year;2
+CULTURE;Karaí Octubre is a tradition that consists of families preparing a great number of typical dishes to ward off…;food shortage;bad omens;the winter;water shortage;0
+CULTURE;What culture does the mystical character Karaí Octubre belong to?;Guarani culture;Aztec culture;Yamana culture;Incan culture;0
+CULTURE;What is Karaí Octubre?;A person;A creature;A mythical animal;An evil goblin;3
+CULTURE;Karaí Octubre puts a curse on your house if you don't have…;Drinks;Cattle;Honey;Abundant food;3
+CULTURE;Traditionally, October is the month where there is a shortage of…;Water;Drinks;Food;Cattle;2
+CULTURE;Which town in Corrientes is known as the ‘Paraná’s Pearl’?;Alvear;Santa Rosa;Empedrado;Mercedes;2
+CULTURE;How do you say Corrientes in Guaraní?;Mboka;Taragui;Mandiyú;Toropy;1
+CULTURE;What is the name of the spotted catfish at SUSTI?;Raúl;Rauw;Suri;Gerard;0
+CULTURE;What is the name of the capybara at SUSTI?;Molina;Pincho;Chana;Andrés;1
+CULTURE;Which is the symbol of the Ibera National Park?;Crested caracara;Ibera Seedeater;Tinamou;Strange-tailed Tyrant;3
+CULTURE;What does Karaí octubre celebrate?;A great deal of food;All are correct;A maleficent goblin;A big festival;1
+CULTURE;How many entry gates does the Iberá National Park have?;2;5;4;9;3
+CULTURE;According to legend, what does Karaí Octubre look like?;Short, robust and hairy;Tall, slim and hairless;Short, slim and hairy;Tall, robust and hairless;0
+CULTURE;How can we scare away Karaí Octubre?;By doing rituals;By dancing;By praying;By eating plenty of food;3
+CULTURE;What is the name of the telecommunication company in Corrientes?;TelCo;TeleCom;TeleCentro;NetCo;0
+CULTURE;Which language does the term “Karaí” come from?;Spanish;Latin;Guaraní;Mandarín;2
+CULTURE;Where does the National Festival of the Traditional and Authentic Chamamé take place?;Mburucuyá;Mercedes;Esquina;Goya;0
+CULTURE;How many countries celebrate Karaí Octubre?;3;1;4;2;0
+CULTURE;In which month do we celebrate the arrival of Karaí?;January;September;August;October;3
+CULTURE;Where does the International Golden Dorado Fishing Tournament take place?;Empedrado;Ituzaingó;Esquina;Paso de la Patria;3
+CULTURE;What region of Argentina celebrates Karaí Octubre?;Patagonia;Cuyo;Northeast;Northwest;2
+CULTURE;Who is Karaí Octubre?;A man;A deity;A goblin;An animal;2
+CULTURE;Which of the following grains does Corrientes produce the most of?;Rice;Wheat;Rye;Sorghum;0
+CULTURE;What food did the Guaraní prepare for the celebration of Karaí Octubre?;Breaded-beef;Yopará;Asado;Soup;1
+CULTURE;What is the Karaí Octubre?;A tradition;A fest;A holiday;A birthday celebration;0
+CULTURE;When is Karaí Octubre celebrated?;September 30th;October 10th;October 1st;October 30th;2
+CULTURE;What does Karaí Octubre look for in homes?;Abundance of crops;Abundance of drinks;Abundance of food;Abundance of cattle;2
+CULTURE;What is Bella Vista´s national festival?;National Orange Festival;National Chacarera Festival;National Strawberry Festival;National Fishermen Festival;0
+CULTURE;What does Iberá mean?;The land without Evil;Shining Waters;Beautiful Scenery;Good Soil;1
+CULTURE;What do we eat during the Karaí Octubre celebration?;Yopará;Polenta Mbaipy;All are correct;Vegetables;2
+CULTURE;What does the Guaraní word mandiyú mean?;Wine;Cotton;Mate;Fish;1
+CULTURE;What year did the Corrientes Carnival start?;1961;1981;1971;1991;0
+CULTURE;Where is the Surubí National Festival celebrated?;Paso de la Patria;Esquina;Goya;Ituzaingó;2
+CULTURE;What does the word karaí mean?;Person;Meal;Lord;Bird;2
+CULTURE;When was the Surubí Festival first celebrated?;1980;1969;2000;1997;1
+CULTURE;What is SUSTI in charge of?;Transport;Information Technology;Information Systems;Tourism;1
+GEOGRAPHY;Which departments do the Iberá Wetlands encompass?;Capital city, Itatí, Caá Catí, and Goya;Empedrado, San Cosme, San Luis del Palmar, and Santo Tomé;Ituzaingó, Mercedes, San Miguel, and Concepción;Paso de los Libres, Monte Caseros, Berón de Astrada, and Sauce;2
+GEOGRAPHY;Which province does the General Manuel Belgrano bridge link Corrientes with?;Entre Ríos;Misiones;Chaco;Santa Fé;2
+GEOGRAPHY;In which departments of Corrientes is Yerba Mate harvested?;Goya and Esquina;Empedrado and San Lorenzo;Ituzaingó and Santo Tomé;Capital city and Itatí;2
+GEOGRAPHY;How many neighboring provinces does Corrientes have?;4;2;5;3;0
+GEOGRAPHY;Which citrus fruits are produced in large quantities within the province of Corrientes?;Tangerines;Oranges;Lemons;Pomelos;1
+GEOGRAPHY;Which are the neighboring countries of Corrientes?;Uruguay;Uruguay, Brazil and Paraguay;Brazil;Brazil and Paraguay;1
+GEOGRAPHY;What is Corrientes’ prevailing climate?;Arid;Subtropical without dry season;Warm;Cold dry;1
+GEOGRAPHY;According to the number of inhabitants, which is the second largest locality in Corrientes?;Santo Tomé;Ituzaingó;Mercedes;Goya;3
+GEOGRAPHY;Which rivers surround the province of Corrientes?;Bermejo River and Paraná River;Paraguay River and Paraná River;La Plata River and Paraná River;Uruguay River and Paraná River;3
+GEOGRAPHY;How many puntas (capes) are in Corrientes City?;15;27;33;49;1
+GEOGRAPHY;How many municipalities does Corrientes have?;56;76;80;42;1
+GEOGRAPHY;In which localities of Corrientes are citrus fruits produced?;Paso de los Libres and Yapeyú;Monte Caseros and Mocoretá;Mburucuyá and Concepción;Alvear and La Cruz;1
+GEOGRAPHY;According to the 2022 Census, how many inhabitants does Corrientes have?;1,197,553;1,500,963;1,000,050;1,260,184;0
+GEOGRAPHY;Where is Establecimiento Las Marias located?;Santa Rosa;Mercedes;Virasoro;Saladas;2
+GEOGRAPHY;Where in Corrientes is the Yacyretá dam located?;Esquina;Santo Tome;Goya;Ituzaingó;3
+GEOGRAPHY;Which Brazilian locality does Paso de los Libres border?;Itapema;Uruguayana;Meia Praia;Dionisio Cerqueira;1
+GEOGRAPHY;In which region is the province of Corrientes located?;Cuyo region;Patagonia region;Northwest;Northeast;3
+GEOGRAPHY;Which is one of the main economic activities developed in the province of Corrientes?;Mining;Agriculture and cattle farming;Automotive industry;Maritime fishing;1
+GEOGRAPHY;Which ecoregion is located in Corrientes?;Selva Paranaense;Chaco Seco;Pampa;Iberá Wetlands;3
+GEOGRAPHY;Which river establishes the eastern boundary of Corrientes?;Paraná River;Uruguay River;Iguazú River;Salado River;1
+GEOGRAPHY;Which of these natural reserves is located in the province of Corrientes?;Iguazú National Park;El Impenetrable National Park;Mburucuyá National Park;Los Alerces National Park;2
+GEOGRAPHY;Which is the main natural resource exploited in Corrientes?;Oil;Natural gas;Wood;Gold;2
+GEOGRAPHY;Which department in Corrientes is known for its rice production?;Goya;Ituzaingó;Mercedes;Bella Vista;0
+GEOGRAPHY;Where in Corrientes can the largest concentration of yatay palm forests be found?;Quebrada del Condorito National Park;Mburucuyá National Park;Iberá Nature Reserve;El Palmar National Park;3
+GEOGRAPHY;Which city in Corrientes is located at the confluence of the Corrientes River and the Paraná River?;Goya;Ituzaingó;Bella Vista;Corrientes;3
+GEOGRAPHY;What is the prevailing geological formation in the southwest of Corrientes?;Sierras de San Luis;Pampas;Chaco-Pampas plain;Paraná basin system;2
+GEOGRAPHY;Which river flows into the Paraná River estuary, close to Paso de la Patria city?;Salado River;Miriñay River;Paraguay River;Pilcomayo River;2
+GEOGRAPHY;Which is the average elevation of Corrientes city above sea level?;56 meters;30 meters;150 meters;300 meters;0
+GEOGRAPHY;The peak of Corrientes is located in Ituzaingó department, which of the following is it?;De la Cruz Hill;Yaguarí Hill;De los Patos Hill;Paraná Hill;1
+GEOGRAPHY;Which is the main economic activity in Mercedes department?;Tourism;Agriculture;Cattle farming;Fishing;2
+HISTORY;When is Chamamé Day celebrated in Argentina?;June 10th;February 20th;September 19th;January 15th;2
+HISTORY;When is the Correntine Children's Day celebrated?;August 7th;March 20th;March 9th;August 20th;2
+HISTORY;When was the Gral. Manuel Belgrano Bridge opening ceremony celebrated?;1970;1973;1968;1982;1
+HISTORY;Who does Correntine Children’s day celebrate?;Pedro Rios;Federico Ojeda;Miguel Molina;Gerardo Romero;0
+HISTORY;When was the National Iberá Park declared an international wetland?;2015;1998;2021;2002;3
+HISTORY;When was the City of Corrientes founded?;1640;1580;1690;1588;3
+HISTORY;Where was Sargento Cabral born?;Saladas;Itatí;Esquina;Empedrado;0
+HISTORY;Who is the current Governor of Corrientes?;Ricardo Colombi;Eduardo Tassano;Gustavo Valdés;Mariano Hormaechea;2
+HISTORY;When were the Iberá Wetlands declared a natural reserve?;2001;1983;2011;1993;1
+HISTORY;When was Chamamé declared intangible cultural heritage by the UNESCO?;2005;2020;2022;1997;1
+HISTORY;When was the Provincial Corsódromo ‘Nolo Alias’ inaugurated?;2008;2010;2013;2016;2
+HISTORY;Where was San Martín born?;Curuzú Cuatiá;Paso de los Libres;Goya;Yapeyú;3
+HISTORY;Who founded the city of Corrientes?;José Hernández;Fernando Saavedra;Juan Torres de Vera y Aragón;Juan José Cabral;2
+HISTORY;Which president was born in Paso de los Libres, Corrientes?;Raul Alfonsín;Hipólito Yrigoyen;Carlos Menem;Arturo Frondizi;3
+HISTORY;Where in Corrientes did one of the greatest battles of the War of the Triple Alliance take place?;Ituzaingó;Bella Vista;Goya;Paso de los Libres;0
+HISTORY;Which historical figure was a prominent political and military leader in Corrientes during the first half of the 19th century?;Pedro Ferré;Andrés Guacurarí;Juan Esteban Pedernera;Juan Bautista Alberdi;0
+HISTORY;In the outskirts of which city did the Ñaembé battle take place?;Mercedes;Carolina;Goya;Corrientes;1
+HISTORY;Who is known as “Tamborcito de Tacuarí?”;José de San Martín;Juan Torres de Vera;Pedro Ríos;Manuel Belgrano;2
+HISTORY;When was Goya founded?;1807;1852;1810;1817;0
+HISTORY;When was Mercedes founded?;1807;1810;1832;1829;2
+HISTORY;Which Argentine president fought in the Battle of Ñaembé in 1871 near Goya, now Colonia Carolina?;Bartolome Mitre;Domingo Faustino Sarmiento;Julio Argentino Roca;Roque Saenz Peña;2
+HISTORY;When was José de San Martín born?;February 25th, 1778;August 17th, 1850;May 25th, 1810;July 9th, 1816;0
+HISTORY;When was the opening ceremony for the Correntine riverside celebrated?;1931;1941;1951;1961;2
+HISTORY;The city council (el cabildo) of Corrientes used to be located where the… is now.;Capital Government Building;Provincial police headquarters;UNNE's administration office;Senator's Office;1
+HISTORY;The city council (el cabildo) was built as an institution along with the city on April 3rd, 1588. After being demolished multiple times the last one was built in…;1800;1810;1815;1816;2
+HISTORY;The city council (el cabildo) was in front of 25 de Mayo Square, How is the Street called?;Salta;25 de Mayo;Buenos Aires;Fray José de la Quintana;3
+HISTORY;What is the name of the handmade cheese that Gregoria Morales and her husband Bernardo de Olivera prepared? The name of a city now.;Blue cheese;Queso Goya;Gouda cheese;Gruyère cheese;1
+SPORTS;What is the nickname of the Correntinian basketball player Federico Kammerichs?;El Carpincho;El Yaguareté;El Yacaré;El Tero;2
+SPORTS;In which club did the basketball player Federico Kammerichs start his career?;Club Unión (Goya);Regatas (Capital);San Martin (Capital);Juventud Unida (Goya);0
+SPORTS;When was Diego Maradona Mandiyu’s coach/manager?;1993;1994;1995;1996;1
+SPORTS;Which city is Olympic medalist Federico Kammerichs from?;Esquina;Corrientes;Goya;Ituzaingó;2
+SPORTS;Which clubs from Corrientes were the only ones to play the First Division of Argentine Football?;Huracán Corrientes and Boca Unidos;Boca Unidos and Mandiyú;Mandiyú and Huracán Corrientes;Talleres and Ferroviario;2
+SPORTS;Where did Francisco "Pancho" Sá debut in terms of sports?;Boca Unidos;Deportivo Mandiyu;Huracán Corrientes;Sarmiento(Resistencia);2
+SPORTS;Which is the nickname given to Club Deportivo Mandiyu?;Gauchos;Albo;Textiles;Guaranies;1
+SPORTS;Which is the nickname of Club Atlético Huracán?;Carpinchos;Canalla;Globo;Yaguaretés;2
+SPORTS;Which is the nickname of Boca Unidos?;El club de la Ribera;Rojos;El club de la Costa;El Club del Puente;0
+SPORTS;Which is the oldest football club in Corrientes?;Boca Unidos;Deportivo Mandiyu;Huracan FC(Goya);Huracan de Corrientes;3
+SPORTS;In which year was the Huracan club of Corrientes founded?;1925;1918;1923;1952;1
+SPORTS;In which year was Club Deportivo Mandiyu founded?;1925;1918;1923;1952;3
+SPORTS;At the moment, who represents Corrientes in the National Basketball League?;Regatas;San Martin and Comunicaciones;San Martin and Regatas;Regatas;1
+SPORTS;How many National League championships does Regatas Corrientes Club have?;1;2;3;4;0
+SPORTS;In which year was Regatas Corrientes founded?;1925;1918;1923;1952;2
+SPORTS;Which is the nickname of San Martin club?;Yacarés;Gallos;Carpincho;Dorados;1
+SPORTS;Where is the Regatas Corrientes stadium located?;La Rosada;Costanera Sur;Parque Mitre;Libertad;2
+SPORTS;What is the name of the stadium of San Martin club also known as "El Fortín"?;Raúl Argentino Ortiz;Mariano Moreno;Raul Alfonsín;J. Torres de Vera;0
+SPORTS;In which season did Regatas Corrientes become the champion of the Basketball National League (LNB)?;2010-2011;2011-2012;2012-2013;2013-2014;2
+SPORTS;In which Olympics did Sebastián Crismanich win a golden medal?;Athens 2004;Beijing 2008;London 2012;Rio de Janeiro 2016;2
+SPORTS;How many Olympic medalists were from Corrientes?;2;3;4;5;3
+SPORTS;Who is the only Correntinian who got a gold medal in the Olympic Games?;Carlos Mauricio Espínola;Sebastián Crismanich;Federico Kammerichs;Carlos Alberto Moratorio;1
+SPORTS;In Tokio 1964, Argentina got only one silver medal. Carlos Alberto Moratorio, who was from Corrientes, did it. Which sport did he take part in?;Pole vault;Swimming;Horse riding;Taekwondo;2
+SPORTS;Carlos Mauricio Espindola, as well as Luciana Aymar, have won more medals than any other Argentinian in the Olympics. How many medals have they got?;1;2;3;4;0
+SPORTS;Reinaldo Gorno was the first athlete from Corrientes to win an Olympic medal (silver) in Helsinki 1952. Where was he born?;Goya;Itatí;Ituzaingó;Yapeyú;3
+SPORTS;Reinaldo Gorno won a silver medal in the Olympic Games in 1952. Which sport did he take part in?;Marathon;Long jump;Pole jumping;Swimming;0
+SPORTS;When did Regatas win the FIBA America’s League?;2008;2009;2010;2011;3
+SPORTS;Which sport did Carlos Mauricio Espindola did?;Rowing and windsurf;Swimming;Athletism;Taekwondista;0
+SPORTS;Which Correntinian has represented Argentina in The Olympic Games Paris 2024?;Marcelo Herrera;Kevin Zenón;Carlos Layoy;Cristian Sebastián Dening;1
+BIOLOGY;Which is the largest native feline in Corrientes?;The jaguar;The ocelot;The Geoffroy's cat;The Southern tiger cat;0
+BIOLOGY;What is the name of the aquatic plant frequently found in the rivers and lagoons of Corrientes?;Blue passionflower;Water hyacinth;Water lily;Lotus;1
+BIOLOGY;What kind of monkey can be seen in the jungle of Corrientes and sometimes even in trees around the city?;Chimpanzee;Capuchin;Mandrill;Howler;3
+BIOLOGY;Which of these plants blossom only once in their lifetime?;Trumpet tree;Bamboo;Cockspur coral tree;Water hyacinth;1
+BIOLOGY;Which of these city names is also the name of a flower?;Mburucuyá;Tatacuá;Itá Ibaté;Itatí;0
+BIOLOGY;Which rodent is often associated with Corrientes?;Pampas cavy;Rat;Capybara;Rabbit;2
+BIOLOGY;What is the name of the largest amphibious reptile of the Iberá Wetlands?;Jararaca;Python;Argentine boa;Jacare caiman;3
+BIOLOGY;How many eggs can a female jacare caiman lay?;Between 10 and 20;Between 20 and 40;Between 0 and 10;Between 40 and 50;1
+BIOLOGY;If a jacare caiman’s nest temperature is between 29°C and 31°C (84/88ºF), hatchlings will be…;All male;Male and female alike;All female;70% male and 30% female;2
+BIOLOGY;How long do jacare caimans care for their offspring?;6 months;A year;8 months;3 months;1
+BIOLOGY;The giant otter is the largest otter species in the world, capable of reaching a length of up to…;1 meter;5 meters;1.5 meters;1.8 meters;3
+BIOLOGY;How many ants can an anteater consume per day?;10,000;20,000;35,000;45,000;2
+BIOLOGY;The marsh deer is the largest deer in South America. How long can it grow from head to tail?;2 meters;1.8 meters;3 meters;1 meter;0
+BIOLOGY;The maned wolf is…;Carnivorous;Omnivorous;Herbivorous;Piscivorous;1
+BIOLOGY;How long can the yellow anaconda grow?;2 meters;3 meters;4 meters;5 meters;2
+BIOLOGY;The yellow anaconda is an excellent…;Swimmer;Hunter;Climber;Constrictor;0
+BIOLOGY;The pampas deer can survive without large bodies of water since it obtains water from…;Dew;Lakes;Digging a hole;Rivers;0
+BIOLOGY;What ability does the wattled jacana possess thanks to its long toes?;Faster running;Walking over floating vegetation;Subtler hunting;Better swimming;1
+BIOLOGY;What does the southern screamer do when it perceives something unusual in its environment?;Hides among the vegetation;Emits a loud screech;Quickly flies off to safety;Looks for food on the ground;1
+BIOLOGY;What is the southern screamer’s nest made of?;Dry leaves;Tree twigs;An aquatic plant;Mud and pebbles;2
+BIOLOGY;How many eggs does a female southern screamer lay?;From 1 to 2 eggs;From 3 to 4 eggs;From 5 to 6 eggs;From 7 to 8 eggs;2
+BIOLOGY;How long do the southern screamer pigeons incubate?;30 days;35 days;40 days;45 days;3
+BIOLOGY;What is the third biggest feline in the Americas?;Jaguar;Ocelot;Lynx;Margay;1
+BIOLOGY;What is the scientific name of the Pampas deer?;Cervus elaphus;Odocoileus virginianus;Ozotoceros bezoarticus;Alces alces;2
+BIOLOGY;The Pampas deer is…;Carnivorous;Omnivorous;Herbivorous;Insectivorous;2
+BIOLOGY;Where in the Iberá Park was the collared peccary reintroduced?;Auca Mahuida reserve;Punta Tombo reserve;San Nicolás reserve;La Payunia reserve;2
+BIOLOGY;What important role does the collared peccary play in its ecosystem?;Control insect population;Scatter fruits and seeds of native plants;Build dens for other species;Be an apex predator;1
+BIOLOGY;What is the main color of the red macaw’s plumage?;Blue;Green;Red;Yellow;2
+BIOLOGY;What was the natural habitat of the red macaw in Argentina?;Northern deserts;Northeastern jungles;Southern mountains;Central plains;1
+BIOLOGY;What is the scientific name for the red-legged seriema?;Cariama cristata;Seriema cristata;Tinamus solitarius;Rhea americana;1
+BIOLOGY;The red-legged seriema is…;Herbivorous;Frugivorous;Insectivorous and carnivorous;Granivorous;2
+
+
+
+
+

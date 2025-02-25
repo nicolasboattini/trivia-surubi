@@ -19,20 +19,28 @@ public class MainMenu : MonoBehaviour
     public GameObject togglePrefab;
     public Transform toggleParent;
     public Toggle eventoMode;
-
+    public Dropdown fileDropdown;
+    public GameObject fileSelector;
+    private string FILE_NAME = "questions.txt";
+    private bool fileChanged;
     private const string selectedCategoriesKey = "SelectedCategories";
 
     private void Start()
     {
-#if UNITY_EDITOR
+        if (PlayerPrefs.HasKey("FILE_NAME"))
+        {
+            FILE_NAME = PlayerPrefs.GetString("FILE_NAME");
+        }
+#if !UNITY_WEBGL
         Debug.Log("Entrando por Desktop");
+        PopulateDropdown();
+        fileDropdown.onValueChanged.AddListener(index => OnFileSelected(index));
         GenerateCategoryTogglesDesktop();
         toggleListeners();
         
 #else
         Debug.Log("Entrando por webgl");
         GenerateCategoryTogglesWebGL();
-        //toggleParent.transform.position = new Vector3(0, 0, 0);
 #endif
     }
     public void toggleListeners()
@@ -47,12 +55,33 @@ public class MainMenu : MonoBehaviour
             UpdateToggleColor(categoryToggles[i], false);
         }
     }
+    public void PopulateDropdown()
+    {
+        List<string> fileNames = new();
+        string[] files = Directory.GetFiles(Application.streamingAssetsPath, "*.txt"); // Solo archivos .txt
+
+        foreach (string file in files)
+        {
+            fileNames.Add(Path.GetFileName(file)); // Guardamos solo el nombre del archivo
+        }
+        fileDropdown.ClearOptions();
+        fileDropdown.AddOptions(fileNames);
+    }
+    public void OnFileSelected(int index)
+    {
+        string selectedFile = fileDropdown.options[index].text;
+        Debug.Log("Archivo seleccionado: " + selectedFile);
+        FILE_NAME = selectedFile;
+        fileChanged = true;
+        SaveFileName();
+    }
+
     public void GenerateCategoryTogglesDesktop()
     {
         List<Toggle> togglesList = new List<Toggle>(); // Usamos una lista temporal para agregar los toggles
         HashSet<string> uniqueCategories = new HashSet<string>(); // Usamos un HashSet para almacenar las categorías únicas
 
-        string filePath = Path.Combine(Application.streamingAssetsPath, "questions.txt");
+        string filePath = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
         if (File.Exists(filePath))
         {
             string[] lines = File.ReadAllLines(filePath);
@@ -74,7 +103,6 @@ public class MainMenu : MonoBehaviour
         }
 
         categoryToggles = togglesList.ToArray();
-        //toggleParent.transform.position = Vector3.zero;
     }
     public void GenerateCategoryTogglesWebGL()
     {
@@ -148,7 +176,15 @@ public class MainMenu : MonoBehaviour
             toggle.isOn = allSelected;            
             UpdateToggleColor(toggle, allSelected);
         }
-    }    
+    }
+    public void DeleteToggles()
+    {
+        foreach (Toggle toggle in categoryToggles)
+        {
+            Destroy(toggle.gameObject);
+        }
+        categoryToggles = new Toggle[0];
+    }
     public void UpdateToggleColor(Toggle toggle, bool val)
     {
         ColorBlock cb = toggle.colors;
@@ -171,8 +207,18 @@ public class MainMenu : MonoBehaviour
     public void SwapConfig()
     {        
         configPanel.SetActive(!configPanel.activeSelf);
+#if !UNITY_WEBGL
+        fileSelector.SetActive(configPanel.activeSelf);
+#endif
         UpdateScoreLimitText();
         UpdateState();
+        if (fileChanged)
+        {
+            fileChanged = !fileChanged;
+            DeleteToggles();
+            GenerateCategoryTogglesDesktop();
+            toggleListeners();
+        }
     }
     public void IncrementScoreLimit()
     {
@@ -235,5 +281,10 @@ public class MainMenu : MonoBehaviour
         int state = evento ? 1 : 0;
         PlayerPrefs.SetInt("ModoEvento", state);
         PlayerPrefs.Save(); 
+    }
+    private void SaveFileName()
+    {
+        PlayerPrefs.SetString("FILE_NAME", FILE_NAME);
+        PlayerPrefs.Save();
     }
 }

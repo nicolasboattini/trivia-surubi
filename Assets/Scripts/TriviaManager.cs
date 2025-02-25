@@ -11,6 +11,7 @@ using static TriviaManager;
 public class TriviaManager : MonoBehaviour
 {
     public Text questionText;
+    private string FILE_NAME;
     public Text currentQuestion;
     public Text currentCat;
     public Button[] answerButtons; // Suponiendo que tienes 4 botones para las respuestas
@@ -31,6 +32,10 @@ public class TriviaManager : MonoBehaviour
         public string catName;
     }
     [SerializeField] private GameManager m_gameManager = null; // Referencia al GameManager
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         m_gameManager = FindObjectOfType<GameManager>();
@@ -38,9 +43,17 @@ public class TriviaManager : MonoBehaviour
     }
     public void StartTrivia(List<string> selectedCategories)
     {
-#if UNITY_EDITOR
+        if (PlayerPrefs.HasKey("FILE_NAME"))
+        {
+            FILE_NAME = PlayerPrefs.GetString("FILE_NAME");
+        }
+        else
+        {
+            FILE_NAME = "questions.txt";
+        }
+#if !UNITY_WEBGL
         Debug.Log("Entrando por Desktop");
-        LoadQuestionsFromFileDesktop("questions.txt", selectedCategories);
+        LoadQuestionsFromFileDesktop(FILE_NAME, selectedCategories);
         ShuffleQuestions();
         ShowNextQuestion();
         m_gameManager.m_score = 0;
@@ -167,7 +180,7 @@ public class TriviaManager : MonoBehaviour
         questionIndexes.Shuffle();
         Debug.Log($"Question indexes {questionIndexes.Count} ");
 
-#if !UNITY_EDITOR
+#if UNITY_WEBGL
         Debug.Log("Entrando por webgl nextQuestion");
         ShowNextQuestion();
         m_gameManager.m_score = 0;

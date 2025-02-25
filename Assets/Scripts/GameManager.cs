@@ -65,7 +65,11 @@ public class GameManager : MonoBehaviour
             if (timeLeft <= 0.0f)
             {
                 Debug.Log("FIN DEL TIEMPO");
-                EndTimer(); // End timer when time is up
+                blockOption.SetActive(true);
+                if (m_audioSource.isPlaying) m_audioSource.Stop();
+                m_audioSource.clip = m_incorrectSound;
+                m_audioSource.Play();
+                StartCoroutine(WaitAndEnd(0f));
             }
         }
         if (PlayerPrefs.HasKey("ScoreLimit") && PlayerPrefs.GetInt("ScoreLimit") != 0)
@@ -120,7 +124,7 @@ public class GameManager : MonoBehaviour
         if (answer)
         {
             m_score++;
-            textoContador.text = m_score.ToString();
+            textoContador.text = $"Correctas: {m_score}";
             m_anim.enabled = false;
             timeLeft = 17.5f;
             yield return StartCoroutine(WaitAndNextQuestion());
@@ -128,6 +132,7 @@ public class GameManager : MonoBehaviour
         else
         {
             m_anim.enabled = false;
+            timerStarted = false;
             yield return StartCoroutine(WaitAndShowKeyboard());
         }
     }
@@ -155,10 +160,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitAndShowKeyboard()
     {
-        if (m_audioSource != null)
-        {
-            m_audioSource.PlayOneShot(m_incorrectSound);
-        }
         yield return new WaitForSeconds(m_waitTime);
         submitName();
         blockOption.SetActive(false);

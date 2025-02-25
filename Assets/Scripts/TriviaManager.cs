@@ -249,6 +249,7 @@ public class TriviaManager : MonoBehaviour
     }
     public void GameOver()
     {
+        PlayerPrefs.DeleteKey("SelectedCategories");
         if (m_gameManager.Landscape)
         {
             SceneManager.LoadScene("MenuHor");

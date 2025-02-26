@@ -83,8 +83,7 @@ public class GameManager : MonoBehaviour
             if (checkScore())
             {
                 timerStarted = false;
-                showWinnerScreen(false);
-                StartCoroutine(WaitAndEnd(5f));
+                StartCoroutine(WaitAndShowKeyboard());
             }
         }
 
@@ -127,7 +126,10 @@ public class GameManager : MonoBehaviour
             textoContador.text = $"Correctas: {m_score}";
             m_anim.enabled = false;
             timeLeft = 17.5f;
-            yield return StartCoroutine(WaitAndNextQuestion());
+            if (!checkScore())
+            {
+                yield return StartCoroutine(WaitAndNextQuestion());
+            }
         }
         else
         {
